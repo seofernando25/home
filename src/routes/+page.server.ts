@@ -14,7 +14,12 @@ export const load = async (e) => {
   let totalStars = 0;
   try {
     const res = await e.fetch(
-      "https://api.github.com/users/SeoFernando25/repos"
+      "https://api.github.com/users/SeoFernando25/repos",
+      {
+        headers: {
+          "User-Agent": "SeoFernando25",
+        },
+      }
     );
     const txt = await res.text();
     console.log(txt);
