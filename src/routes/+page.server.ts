@@ -42,8 +42,9 @@ export const load = async (e) => {
       totalStars,
     };
   } catch (error) {
+    console.error(error);
     return {
-      err: error as Error,
+      err: (error as Error).message,
       repos,
       totalStars,
     };
