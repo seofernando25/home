@@ -16,7 +16,9 @@ export const load = async (e) => {
     const res = await e.fetch(
       "https://api.github.com/users/SeoFernando25/repos"
     );
-    repos = await res.json();
+    const txt = await res.text();
+    console.log(txt);
+    repos = JSON.parse(txt);
     // Filter out forks
     repos = repos.filter((repo) => !repo.fork);
     // Sort by updated date
