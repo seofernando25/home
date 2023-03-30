@@ -13,7 +13,9 @@ export const load = async (e) => {
   let repos: Repo[] = [];
   let totalStars = 0;
   try {
-    const res = await fetch("https://api.github.com/users/SeoFernando25/repos");
+    const res = await e.fetch(
+      "https://api.github.com/users/SeoFernando25/repos"
+    );
     repos = await res.json();
     // Filter out forks
     repos = repos.filter((repo) => !repo.fork);
