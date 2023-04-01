@@ -22,7 +22,6 @@ export const load = async (e) => {
       }
     );
     const txt = await res.text();
-    console.log(txt);
     repos = JSON.parse(txt);
     // Filter out forks
     repos = repos.filter((repo) => !repo.fork);
