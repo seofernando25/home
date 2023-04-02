@@ -74,11 +74,8 @@
       Stack Overflow
     </a>
     <!-- Resume -->
-    <div
-      class="tooltip tooltip-left sm:tooltip-top"
-      data-tip="Not quite there yet, but hey! You can send me an email or message me on Linkedin"
-    >
-      <a href="#" class="main-link hover:text-slate-200">
+    <div class="tooltip tooltip-left sm:tooltip-top">
+      <a href="resume" class="main-link hover:text-slate-200">
         <i class="far fa-file text-4xl sm:text-7xl"></i>
         Résumé
       </a>
