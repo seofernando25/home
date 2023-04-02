@@ -13,7 +13,7 @@
     <h1 class="">
       Personal Projects <span class="whitespace-nowrap">
         <i class="fas fa-star"></i>
-        {fetchError ? "?" : totalStars}
+        {fetchError ? totalStars : "?"}
       </span>
       <span class="text-xs text-base-content text-opacity-80 whitespace-nowrap"
         >It ain't much, but it's honest work</span
