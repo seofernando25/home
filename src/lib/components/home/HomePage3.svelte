@@ -2,7 +2,7 @@
 </script>
 
 <section id="the-more-stuff" class="flex flex-col p-4 overflow-clip">
-  WIP: Skills/Work Experience/etc
+  WIP: Skills/Work Experience/Notable Projects/etc
 </section>
 
 <style>
