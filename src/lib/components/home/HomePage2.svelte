@@ -4,10 +4,8 @@
 </script>
 
 <section id="the-good-stuff" class="flex flex-col p-4 overflow-clip">
-  <div class="p-4 prose mb-4 max-w-none justify-between flex ">
+  <div class="p-4 prose max-w-none">
     <h1>🏗️ Notable Projects</h1>
-
-    <h2 class="m-0  whitespace-nowrap">(I did that!)</h2>
   </div>
 
   <!-- Auto Grid -->
