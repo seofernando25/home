@@ -15,7 +15,6 @@ export async function load(e) {
   let repos: Repo[] = [];
   let totalStars = 0;
   try {
-    throw new Error("This is an error"); // TODO: Remove this line before deploying
     const res = await e.fetch(
       "https://api.github.com/users/SeoFernando25/repos",
       {

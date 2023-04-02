@@ -5,7 +5,7 @@
   export let repos: Repo[] = [];
   export let totalStars: number;
 
-  $: fetchError = !!repos;
+  $: fetchError = repos.length === 0 || err !== undefined || totalStars === 0;
 </script>
 
 <section id="the-more-stuff" class="flex flex-col p-4 overflow-clip">
