@@ -51,6 +51,7 @@
     <!-- Github -->
     <a
       href="https://github.com/SeoFernando25"
+      target="blank"
       class="main-link hover:text-slate-200"
     >
       <i class="fab fa-github text-4xl sm:text-7xl"></i>
@@ -67,6 +68,7 @@
     <!-- Stack Exchange -->
     <a
       href="https://stackexchange.com/users/11740005/seofernando?tab=accounts"
+      target="blank"
       class="main-link hover:text-slate-200"
     >
       <i class="fab fa-stack-overflow text-4xl sm:text-7xl"></i>

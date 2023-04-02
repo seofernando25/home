@@ -11,7 +11,7 @@
   </div>
 
   <!-- Auto Grid -->
-  <div class="auto-grid place-items-center overflow-scroll fade-y">
+  <div class="fade-y overflow-auto  auto-grid">
     <ProjectCard
       name="StealthShare"
       description="A temporary file hosting website using R2 Buckets"
@@ -33,17 +33,17 @@
     />
 
     <ProjectCard
+      name="OS Calculators"
+      description="Page Replacement and Process Scheduling online calculators"
+      link="https://os.seofernando.com"
+      imgAsTxt="💻"
+    />
+
+    <ProjectCard
       name="ULauncher GPT"
       description="An an ULauncher extension that allows you to use GPT-3 inside ULauncher"
       link="https://ext.ulauncher.io/-/github-seofernando25-ulauncher-gpt"
       img="https://github.com/SeoFernando25/ulauncher-gpt/blob/master/images/icon.png?raw=true"
-    />
-    <!-- https://os.seofernando.com. -->
-    <ProjectCard
-      name="OS Calculators"
-      description="Online calculators for my CSI 3131 Operating Systems course with Page Replacement and Process Scheduling Algorithms"
-      link="https://os.seofernando.com"
-      imgAsTxt="💻"
     />
   </div>
 
@@ -64,7 +64,7 @@
 
   .auto-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 1.5rem;
     padding: 1rem;
   }
