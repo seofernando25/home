@@ -1,3 +1,5 @@
+import { GITHUB_TOKEN } from "$env/static/private";
+
 // Github Repos reduced type
 type Repo = {
   name: string;
@@ -9,15 +11,17 @@ type Repo = {
   fork: boolean;
 };
 
-export const load = async (e) => {
+export async function load(e) {
   let repos: Repo[] = [];
   let totalStars = 0;
   try {
+    throw new Error("This is an error"); // TODO: Remove this line before deploying
     const res = await e.fetch(
       "https://api.github.com/users/SeoFernando25/repos",
       {
         headers: {
           "User-Agent": "SeoFernando25",
+          Authorization: `Bearer ${GITHUB_TOKEN}`,
         },
       }
     );
@@ -46,15 +50,15 @@ export const load = async (e) => {
     );
     return {
       err: null,
-      repos,
+      repos: repos ?? [],
       totalStars,
     };
   } catch (error) {
     console.error(error);
     return {
       err: (error as Error).message,
-      repos,
+      repos: repos ?? [],
       totalStars,
     };
   }
-};
+}

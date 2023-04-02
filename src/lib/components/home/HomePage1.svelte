@@ -1,16 +1,15 @@
 <script lang="ts">
+  import "/node_modules/@fortawesome/fontawesome-free/js/all.js";
   import { hrefSmoothScroll } from "$lib/directives/hrefSmoothScroll";
   import SwapProfile from "../SwapProfile.svelte";
   import TextSlashList from "../TextSlashList.svelte";
 
   const imA = [
     "Full-Stack Developer",
-    "CompSci Student",
-    "Web Developer",
     "Learner",
     "Programmer",
+    "ArchLinux User 🐧 BTW",
     "Tinkerer",
-    "Svelte Enthusiast",
     "Web Purist",
     "Aspiring Computer Wizard",
   ];
@@ -25,8 +24,8 @@
         <SwapProfile />
       </div>
       <div class="sm:card-body p-2  ">
-        <p class="font-semibold text-2xl  ">
-          Hello 👋👀 <span class="whitespace-nowrap">I'm Fernando,</span>
+        <p class="font-semibold text-2xl text-center ">
+          Hello 👋👀 <span class="whitespace-nowrap">I'm Fernando</span>
           <!-- Center text middle -->
           <span class="justify-center flex gap-4 p-4 items-center ">
             I'm a
@@ -99,5 +98,21 @@
 
   .main-link {
     @apply flex flex-col gap-2 text-center link-hover transition;
+  }
+
+  /* Clip image with bg color */
+  .img-bg-clip::before {
+    @apply bg-green-400;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10rem;
+    height: 10rem;
+    clip-path: svg-path("M0,0 L0,100 L100,100 L100,0 L0,0 Z");
+  }
+
+  .img-bg-clip {
+    @apply relative;
+    clip-path: svg-path("M0,0 L0,100 L100,100 L100,0 L0,0 Z");
   }
 </style>

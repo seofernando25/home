@@ -1,6 +1,8 @@
 export function hrefSmoothScroll(node: HTMLElement) {
   const handleClick = (e: MouseEvent) => {
     e.preventDefault();
+    window.history.pushState({}, "", node.getAttribute("href") || "");
+
     const href = node.getAttribute("href");
     if (href) {
       const target = document.querySelector(href);

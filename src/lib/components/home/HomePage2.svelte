@@ -1,43 +1,50 @@
 <script lang="ts">
   import { hrefSmoothScroll } from "$lib/directives/hrefSmoothScroll";
-  import type { Repo } from "$lib/types/Repo";
-
-  export let err: any;
-  export let repos: Repo[];
-  export let totalStars: number;
+  import ProjectCard from "../ProjectCard.svelte";
 </script>
 
 <section id="the-good-stuff" class="flex flex-col p-4 overflow-clip">
-  <div class="p-4 prose mb-4 max-w-none">
-    <h1 class="">
-      Personal Projects <span class="whitespace-nowrap">
-        <i class="fas fa-star"></i>
-        {totalStars}
-      </span>
-      <span class="text-xs text-base-content text-opacity-80 whitespace-nowrap"
-        >It ain't much, but it's honest work</span
-      >
-    </h1>
+  <div class="p-4 prose mb-4 max-w-none justify-between flex ">
+    <h1>🏗️ Notable Projects</h1>
+
+    <h2 class="m-0  whitespace-nowrap">(I did that!)</h2>
   </div>
+
   <!-- Auto Grid -->
   <div class="auto-grid place-items-center overflow-scroll fade-y">
-    {#each repos as repo}
-      <a
-        href="{repo.html_url}"
-        class="p-4 card card-compact bg-base-200 shadow-xl w-full h-48 hover:transform hover:scale-105 transition"
-      >
-        <p class="card-title">{repo.name}</p>
-        <div class="card-body">
-          <p class="font-semibold ">{repo.description ?? ""}</p>
-        </div>
-        {#if repo.stargazers_count}
-          <div class="card-actions justify-end">
-            <i class="fas fa-star text-xl"></i>
-            {repo.stargazers_count}
-          </div>
-        {/if}
-      </a>
-    {/each}
+    <ProjectCard
+      name="StealthShare"
+      description="A temporary file hosting website using R2 Buckets"
+      link="https://bucket.seofernando.com"
+      imgAsTxt="🔗"
+    />
+
+    <ProjectCard
+      name="PokeIndex"
+      description="A simple Pokemon search tool"
+      link="https://pokeindex.seofernando.com/"
+      img="https://pokeindex.seofernando.com/assets/img/favicon.svg"
+    />
+    <ProjectCard
+      name="BrikPick"
+      description="An extension that automates the process of bulk buying LEGO sets"
+      link="https://github.com/SeoFernando25/brick-pick/"
+      img="https://github.com/SeoFernando25/bp-web/blob/master/static/favicon.png?raw=true"
+    />
+
+    <ProjectCard
+      name="ULauncher GPT"
+      description="An an ULauncher extension that allows you to use GPT-3 inside ULauncher"
+      link="https://ext.ulauncher.io/-/github-seofernando25-ulauncher-gpt"
+      img="https://github.com/SeoFernando25/ulauncher-gpt/blob/master/images/icon.png?raw=true"
+    />
+    <!-- https://os.seofernando.com. -->
+    <ProjectCard
+      name="OS Calculators"
+      description="Online calculators for my CSI 3131 Operating Systems course with Page Replacement and Process Scheduling Algorithms"
+      link="https://os.seofernando.com"
+      imgAsTxt="💻"
+    />
   </div>
 
   <!-- Scroll down arrow flex bottom -->
@@ -57,8 +64,9 @@
 
   .auto-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
     grid-gap: 1.5rem;
+    padding: 1rem;
   }
 
   /* Fade the top and bottom of the scrollable area */
@@ -70,5 +78,7 @@
       rgba(0, 0, 0, 1) 90%,
       rgba(0, 0, 0, 0) 95%
     );
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 </style>

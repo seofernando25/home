@@ -1,7 +1,10 @@
 <script>
-  import "/node_modules/@fortawesome/fontawesome-free/js/all.js";
   import "$lib/styles/scrollbar.css";
 </script>
+
+<svelte:head>
+  <title>Fernando Nogueira</title>
+</svelte:head>
 
 <slot />
 

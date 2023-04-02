@@ -3,7 +3,7 @@
   import { fly } from "svelte/transition";
 
   export let strings: string[] = [];
-  export let maxWCh = 10;
+  export let maxWCh = 15;
   export let delay = 2000;
 
   let el: HTMLElement;

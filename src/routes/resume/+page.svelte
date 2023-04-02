@@ -1,3 +1,7 @@
+<svelte:head>
+  <title>Résumé</title>
+</svelte:head>
+
 <div class="w-screen">
   <div class="container mx-auto bg-white shadow-2xl min-h-screen rounded-3xl">
     <div class=" mx-auto prose prose-resume max-w-none p-4 ">
@@ -94,15 +98,17 @@
           </div>
           <div class="p-2 l-outline">
             <h3 class="m-0 card-title">Education</h3>
-            <div class="flex ">
+            <div class="flex flex-wrap justify-center">
               <img
-                class="w-24 h-24 m-0 my-2"
+                class="w-24 h-24 m-0 my-2 "
                 src="/uottawa_logo.jpeg"
                 alt="uOttawa Logo"
               />
               <div>
                 <h4>University of Ottawa</h4>
-                <h5>Honours Bachelor of Science (2021 - 2024)</h5>
+                <h5 class="ml-4">
+                  Honours Bachelor of Science <br /> (2021 - 2024)
+                </h5>
               </div>
             </div>
           </div>

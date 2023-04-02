@@ -6,18 +6,16 @@
   export let data;
 </script>
 
-<!-- Hi, I'm Kevin. I teach people how to make the web and how to make it look good while they're at it. -->
-
 <div class="fps-container">
   <HomePage1 />
 
-  <HomePage2
+  <HomePage2 />
+
+  <HomePage3
     err="{data.err}"
     repos="{data.repos}"
     totalStars="{data.totalStars}"
   />
-
-  <HomePage3 />
 </div>
 
 <style>
