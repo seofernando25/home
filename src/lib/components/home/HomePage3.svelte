@@ -5,7 +5,7 @@
   export let repos: Repo[] = [];
   export let totalStars: number;
 
-  $: fetchError = repos.length === 0 || err !== undefined || totalStars === 0;
+  $: fetchError = repos.length === 0 || err != null || totalStars === 0;
 </script>
 
 <section id="the-more-stuff" class="flex flex-col p-4 overflow-clip">
@@ -13,7 +13,7 @@
     <h1 class="">
       Personal Projects <span class="whitespace-nowrap">
         <i class="fas fa-star"></i>
-        {fetchError ? totalStars : "?"}
+        {fetchError ? "?" : totalStars}
       </span>
       <span class="text-xs text-base-content text-opacity-80 whitespace-nowrap"
         >It ain't much, but it's honest work</span
