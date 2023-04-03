@@ -3,7 +3,7 @@
 </svelte:head>
 
 <div class="container mx-auto bg-white shadow-2xl rounded-3xl min-h-screen">
-  <div class=" mx-auto prose prose-resume max-w-none p-4 ">
+  <div class=" mx-auto prose prose-resume max-w-none p-4">
     <!-- Heading   -->
     <h1>Fernando Nogueira</h1>
     <h2 class="grid grid-cols-2">
@@ -28,28 +28,36 @@
             <strong
               >Honours Bachelor of Science with Major in Computer Science and
               Minor in Statistics (French Immersion Stream)</strong
-            >. <br /> Self-taught and driven by passion for technology. Focused on
-            a mindset of continuous improvement. I am a strong believer of the adoption
-            of faster, cleaner and maintainable technologies.
+            >. Self-taught and driven by passion for technology. Focused on a
+            mindset of continuous improvement. I am a strong believer of the
+            adoption of faster, cleaner and maintainable technologies.
           </p>
         </div>
       </section>
 
       <section class="rounded-xl card-compact outline">
         <div class="card-body">
-          <h3 class="m-0  card-title">Experience</h3>
+          <h3 class="m-0 card-title">Experience</h3>
           <!-- 1 -->
           <h4>Full Stack Software Developer · Co-op (2023 - Present)</h4>
           <h5>Engineering Outreach Department · University of Ottawa</h5>
           <ul class="m-0">
             <li>
               Ported an existing <strong>NodeJS microservice</strong> to use
-              <strong>esbuild</strong> decreasing build times by 80%.
+              <strong>esbuild</strong> decreasing build times by
+              <strong>80%</strong>.
             </li>
             <li>
               Wrote, maintained and tested <strong>Apache Sling</strong> API
-              endpoints using pgSQL, Java and Vitest. <br /> Later integrating
-              them to a front-end written in <strong>Angular</strong>.
+              endpoints using pgSQL and Java. <br />
+            </li>
+            <li>
+              Used <strong>JUnit</strong> for <strong>Unit Tests</strong> and
+              used
+              <strong>Jest/Vitest</strong> for
+              <strong>Integration Tests</strong>. <br />
+              Later integrating them to a front-end written in
+              <strong>Angular</strong>.
             </li>
             <li>
               Aided in the clean-up of a legacy codebase including the removal
@@ -90,7 +98,7 @@
       </section>
       <section class="rounded-xl card-compact outline grid grid-cols-3">
         <div class="p-2">
-          <h3 class="m-0 card-title">Language Proficiency</h3>
+          <h3 class="m-0 card-title">Languages</h3>
           <ul class="m-0 pl-4">
             <li>Portuguese</li>
             <li>English</li>
@@ -99,24 +107,21 @@
           </ul>
         </div>
         <div class="p-2 l-outline">
-          <h3 class="m-0 card-title">Notable Skills</h3>
+          <h3 class="m-0 card-title">Skills</h3>
           <ul class="m-0 pl-4 text-sm">
             <li>
-              Proficiency <br />
-              <div class="pl-4">
-                Typescript/Javascript, CSS/HTML, Python, Java
-              </div>
+              Professional Proficiency <br />
+              <ul class="m-0 text-xs">
+                <li>Typescript/Javascript, CSS/HTML, Python, Java</li>
+                <li>Git, Docker, AWS, S3, PostgreSQL, Github Actions, CI/CD</li>
+              </ul>
             </li>
             <li>
-              Experience <br />
-              <div class="pl-4">Bash, C++, Rust, C#, Lua</div>
-            </li>
-            <li>
-              Technologies <br />
-              <div class="pl-4">
-                Docker, AWS, Cloudflare, S3, PostgreSQL, Firebase, GNU/Linux,
-                VMs, Git, Github Actions
-              </div>
+              Previous Experience <br />
+              <ul class="m-0 text-xs">
+                <li>Bash, C++, Rust, C#, Lua</li>
+                <li>Cloudflare, Firebase, GNU/Linux, VMs</li>
+              </ul>
             </li>
           </ul>
         </div>
