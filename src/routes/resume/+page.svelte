@@ -96,7 +96,9 @@
           </ul>
         </div>
       </section>
-      <section class="rounded-xl card-compact outline grid grid-cols-3">
+      <section
+        class="rounded-xl card-compact outline grid grid-cols-1 md:grid-cols-3"
+      >
         <div class="p-2">
           <h3 class="m-0 card-title">Languages</h3>
           <ul class="m-0 pl-4">
@@ -169,6 +171,6 @@
 
   .l-outline {
     /* Outline left only */
-    box-shadow: -4px 0 0 0 #b8bdc9;
+    box-shadow: -3px 0 0 0 #b8bdc9;
   }
 </style>
