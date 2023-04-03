@@ -26,7 +26,7 @@
     <ProjectCard
       name="BrikPick"
       description="An extension that automates the process of bulk buying LEGO sets"
-      link="https://github.com/SeoFernando25/brick-pick/"
+      link="https://chrome.google.com/webstore/detail/brikpick/oinlneaddfceblampipdlbogeogjnbji"
       img="https://github.com/SeoFernando25/bp-web/blob/master/static/favicon.png?raw=true"
     />
 
