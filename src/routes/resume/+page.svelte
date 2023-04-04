@@ -25,12 +25,14 @@
           <p>
             Undergraduate student at the <strong>University of Ottawa</strong>,
             pursuing an
-            <strong
-              >Honours Bachelor of Science with Major in Computer Science and
-              Minor in Statistics (French Immersion Stream)</strong
-            >. Self-taught and driven by passion for technology. Focused on a
-            mindset of continuous improvement. I am a strong believer of the
-            adoption of faster, cleaner and maintainable technologies.
+            <strong>
+              Honours Bachelor of Science with Major in Computer Science and
+              Minor in Statistics (French Immersion Stream)
+            </strong>
+            with an expected graduation date by the end of
+            <strong>2024</strong>. <br /> Self-taught and driven by passion for technology.
+            Focused on a mindset of continuous improvement. I am a strong believer
+            of the adoption of faster, cleaner and maintainable technologies.
           </p>
         </div>
       </section>
@@ -39,17 +41,16 @@
         <div class="card-body">
           <h3 class="m-0 card-title">Experience</h3>
           <!-- 1 -->
-          <h4>Full Stack Software Developer · Co-op (2023 - Present)</h4>
+          <h4>
+            Full Stack Software Developer · Co-op
+            <span class="whitespace-nowrap"> (January 2023 - April 2023) </span>
+          </h4>
           <h5>Engineering Outreach Department · University of Ottawa</h5>
           <ul class="m-0">
             <li>
               Ported an existing <strong>NodeJS microservice</strong> to use
               <strong>esbuild</strong> decreasing build times by
               <strong>80%</strong>.
-            </li>
-            <li>
-              Wrote, maintained and tested <strong>Apache Sling</strong> API
-              endpoints using pgSQL and Java. <br />
             </li>
             <li>
               Used <strong>JUnit</strong> for <strong>Unit Tests</strong> and
@@ -70,9 +71,20 @@
               <span class="text-error">-20,000 deletions</span>
               of peer reviewed code in a 4 month period.
             </li>
+            <li>
+              Currently writting, maintaining and tested an
+              <strong>Apache Sling</strong>
+              codebase using pgSQL and Java.
+            </li>
           </ul>
           <!-- 2 -->
-          <h4>Avionics Developer · (2021 - Present)</h4>
+          <h4>
+            Avionics Developer · Extracurricular <span
+              class="whitespace-nowrap"
+            >
+              (September 2021 - Present)
+            </span>
+          </h4>
           <h5>uOttawa Rocketry · University of Ottawa</h5>
           <ul class="m-0">
             <li>
@@ -84,20 +96,20 @@
               leaks and improving code maintainability.
             </li>
             <li>
-              Ported the legacy Ground Station Telemetry Software from JavaFX to
-              a web-based one using
-              <strong>SvelteKit</strong>, <strong>ZeroMQ</strong> and
-              <strong>WebSockets</strong> improving DX and UX for the Ground Crew.
-            </li>
-            <li>
               Facilitated and standardized the development environment of new
               team members with <strong>Dev Containers</strong>
+            </li>
+            <li>
+              Currently porting the legacy Ground Station Telemetry Software
+              from JavaFX to a web-based one using
+              <strong>SvelteKit</strong>, <strong>ZeroMQ</strong> and
+              <strong>WebSockets</strong> improving DX and UX for the Ground Crew.
             </li>
           </ul>
         </div>
       </section>
       <section
-        class="rounded-xl card-compact outline grid grid-cols-1 md:grid-cols-3"
+        class="rounded-xl card-compact outline grid grid-cols-1 sm:grid-cols-3"
       >
         <div class="p-2">
           <h3 class="m-0 card-title">Languages</h3>
