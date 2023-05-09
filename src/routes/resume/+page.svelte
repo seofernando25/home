@@ -30,7 +30,7 @@
               Minor in Statistics (French Immersion Stream)
             </strong>
             with an expected graduation date by the end of
-            <strong>2024</strong>. <br /> Self-taught and driven by passion for technology.
+            <strong>2025</strong>. <br /> Self-taught and driven by passion for technology.
             Focused on a mindset of continuous improvement. I am a strong believer
             of the adoption of faster, cleaner and maintainable technologies.
           </p>
@@ -143,14 +143,14 @@
           <h3 class="m-0 card-title">Education</h3>
           <div class="flex flex-wrap justify-center items-center">
             <img
-              class="w-16 h-16 m-0 my-2 "
+              class="w-16 h-16 m-0 my-2"
               src="/uottawa_logo.jpeg"
               alt="uOttawa Logo"
             />
             <div>
               <h4>University of Ottawa</h4>
               <h5 class="ml-4 text-sm">
-                Honours Bachelor of Science <br /> (2021 - 2024)
+                Honours Bachelor of Science <br /> (2021 - 2025)
               </h5>
               <p class="m-0 ml-4">GPA: 3.14/4.0</p>
             </div>
