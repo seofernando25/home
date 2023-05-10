@@ -29,7 +29,7 @@
               Honours Bachelor of Science with Major in Computer Science and
               Minor in Statistics (French Immersion Stream)
             </strong>
-            with an expected graduation date by the end of
+            with an expected graduation date by the summer of
             <strong>2025</strong>. <br /> Self-taught and driven by passion for technology.
             Focused on a mindset of continuous improvement. I am a strong believer
             of the adoption of faster, cleaner and maintainable technologies.
