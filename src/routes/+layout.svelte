@@ -1,15 +1,10 @@
 <script>
-  import "$lib/styles/scrollbar.css";
+    import "$lib/styles/scrollbar.css";
+    import "../app.css";
 </script>
 
 <svelte:head>
-  <title>Fernando Nogueira</title>
+    <title>Fernando Nogueira</title>
 </svelte:head>
 
 <slot />
-
-<style>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-</style>
