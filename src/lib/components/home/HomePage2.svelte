@@ -50,6 +50,12 @@
             link="https://sam.seofernando.com/"
             imgAsTxt="🗣️"
         />
+        <ProjectCard
+            name="RGS"
+            description="uORocketry's next generation ground station"
+            link="https://uorocketry.ca/rgs/"
+            img="https://uorocketry.ca/images/icon.png"
+        />
     </div>
 
     <!-- Scroll down arrow flex bottom -->
