@@ -26,6 +26,65 @@
         <hr class="border-dashed border-2 w-full" />
 
         <main class="flex flex-col gap-4">
+            <section
+                class="rounded-xl card-compact outline grid grid-cols-1 sm:grid-cols-3"
+            >
+                <div class="p-2">
+                    <h3 class="m-0 card-title">Languages</h3>
+                    <ul class="m-0 pl-4">
+                        <li>Portuguese</li>
+                        <li>English</li>
+                        <li>French</li>
+                        <li>Spanish</li>
+                    </ul>
+                </div>
+                <div class="p-2 l-outline">
+                    <h3 class="m-0 card-title">Skills</h3>
+                    <ul class="m-0 pl-4 text-sm">
+                        <li>
+                            Professional Proficiency <br />
+                            <ul class="m-0 text-xs">
+                                <li>
+                                    Typescript/Javascript, CSS/HTML, Python,
+                                    Java
+                                </li>
+                                <li>
+                                    Git, Docker, AWS, S3, PostgreSQL, Github
+                                    Actions, CI/CD
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Previous Experience <br />
+                            <ul class="m-0 text-xs">
+                                <li>Bash, C++, Rust, C#, Lua</li>
+                                <li>
+                                    Cloudflare, Firebase, GNU/Linux, VMs,
+                                    GraphQL
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-2 l-outline">
+                    <h3 class="m-0 card-title">Education</h3>
+                    <div class="flex flex-wrap justify-center items-center">
+                        <img
+                            class="w-16 h-16 m-0 my-2"
+                            src="/uottawa_logo.jpeg"
+                            alt="uOttawa Logo"
+                        />
+                        <div>
+                            <h4>University of Ottawa</h4>
+                            <h5 class="ml-4 text-sm">
+                                Honours Bachelor of Science <br /> (2021 - 2025)
+                            </h5>
+                            <p class="m-0 ml-4">GPA: 3.2/4.0</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Professional Summary -->
             <section class="rounded-xl card-compact outline">
                 <div class="card-body">
@@ -181,61 +240,6 @@
                             of peer reviewed code in a 4 month period.
                         </li>
                     </ul>
-                </div>
-            </section>
-            <section
-                class="rounded-xl card-compact outline grid grid-cols-1 sm:grid-cols-3"
-            >
-                <div class="p-2">
-                    <h3 class="m-0 card-title">Languages</h3>
-                    <ul class="m-0 pl-4">
-                        <li>Portuguese</li>
-                        <li>English</li>
-                        <li>French</li>
-                        <li>Spanish</li>
-                    </ul>
-                </div>
-                <div class="p-2 l-outline">
-                    <h3 class="m-0 card-title">Skills</h3>
-                    <ul class="m-0 pl-4 text-sm">
-                        <li>
-                            Professional Proficiency <br />
-                            <ul class="m-0 text-xs">
-                                <li>
-                                    Typescript/Javascript, CSS/HTML, Python,
-                                    Java
-                                </li>
-                                <li>
-                                    Git, Docker, AWS, S3, PostgreSQL, Github
-                                    Actions, CI/CD
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            Previous Experience <br />
-                            <ul class="m-0 text-xs">
-                                <li>Bash, C++, Rust, C#, Lua</li>
-                                <li>Cloudflare, Firebase, GNU/Linux, VMs</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="p-2 l-outline">
-                    <h3 class="m-0 card-title">Education</h3>
-                    <div class="flex flex-wrap justify-center items-center">
-                        <img
-                            class="w-16 h-16 m-0 my-2"
-                            src="/uottawa_logo.jpeg"
-                            alt="uOttawa Logo"
-                        />
-                        <div>
-                            <h4>University of Ottawa</h4>
-                            <h5 class="ml-4 text-sm">
-                                Honours Bachelor of Science <br /> (2021 - 2025)
-                            </h5>
-                            <p class="m-0 ml-4">GPA: 3.2/4.0</p>
-                        </div>
-                    </div>
                 </div>
             </section>
         </main>
