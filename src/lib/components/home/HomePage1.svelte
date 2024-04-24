@@ -15,16 +15,20 @@
     ];
 </script>
 
-<section class="flex items-center flex-col p-4 gap-4 overflow-clip">
-    <div class="flex items-center flex-col w-full">
+<section
+    class="flex items-center flex-col p-4 gap-4 overflow-clip text-neutral-content"
+>
+    <div class="flex items-center flex-col w-full text-primary-content">
         <div
-            class="card card-compact w-full sm:w-auto sm:card-side bg-base-200 shadow-xl"
+            class="card card-compact w-full sm:w-auto sm:card-side bg-primary shadow-xl"
         >
             <div class="p-4 self-center pb-0">
                 <SwapProfile />
             </div>
-            <div class="sm:card-body p-2">
-                <p class="font-semibold text-2xl text-center">
+            <div class="sm:card-body p-2 flex flex-col gap-2">
+                <p
+                    class="p-2 font-semibold text-2xl text-center bg-base-100 rounded-lg"
+                >
                     Hello 👋👀 <span class="whitespace-nowrap"
                         >I'm Fernando</span
                     >
@@ -38,7 +42,7 @@
                 <div class="card-actions justify-end">
                     <!-- EMAIL -->
                     <a
-                        class="hover:text-slate-200 transition"
+                        class="hover:text-slate-200 transition btn btn-accent text-accent-content"
                         href="mailto:abert036@uottawa.ca"
                     >
                         <i class="fas fa-envelope text-2xl"></i>
@@ -49,7 +53,7 @@
     </div>
 
     <!-- Links -->
-    <div class="my-auto flex flex-row gap-8">
+    <div class="my-auto flex flex-row gap-8 flex-wrap justify-center">
         <!-- Github -->
         <a
             href="https://github.com/SeoFernando25"

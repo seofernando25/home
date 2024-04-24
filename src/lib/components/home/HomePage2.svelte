@@ -3,13 +3,16 @@
     import ProjectCard from "../ProjectCard.svelte";
 </script>
 
-<section id="the-good-stuff" class="flex flex-col p-4 overflow-clip">
+<section
+    id="the-good-stuff"
+    class="flex flex-col p-4 overflow-clip text-neutral-content"
+>
     <div class="p-4 prose max-w-none">
-        <h1>🏗️ Notable Projects</h1>
+        <h1 class="text-neutral-content">🏗️ Notable Projects</h1>
     </div>
 
     <!-- Auto Grid -->
-    <div class="fade-y overflow-auto auto-grid">
+    <div class="fade-y overflow-auto auto-grid text-primary-content">
         <ProjectCard
             name="StealthShare"
             description="Free temporary file hosting website using R2 Buckets"

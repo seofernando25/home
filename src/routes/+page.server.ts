@@ -13,7 +13,7 @@ type Repo = {
 
 export async function load(e) {
     let repos: Repo[] = [];
-    let totalStars = 0;
+    const totalStars = 0;
     try {
         const res = await e.fetch(
             "https://api.github.com/users/SeoFernando25/repos?per_page=100&page=1&sort=updated&direction=asc",
@@ -43,7 +43,7 @@ export async function load(e) {
 
         // Sort by stars
         repos = repos.sort((a, b) => b.stargazers_count - a.stargazers_count);
-        let totalStars = repos.reduce(
+        const totalStars = repos.reduce(
             (acc, curr) => acc + curr.stargazers_count,
             0
         );

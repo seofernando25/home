@@ -62,11 +62,11 @@
     on:mousemove={animateRotation}
     on:mouseleave={removeRotation}
     bind:this={card}
-    class="card card-compact h-42 card-side bg-base-300 hover:shadow-md border-base-200 border-2"
+    class="card card-compact h-42 card-side bg-base-300 hover:shadow-md border-base-200 border-2 min-h-36"
     href={link}
 >
     <div bind:this={highlight} class="highlight"></div>
-    <figure class="w-32 bg-primary-content">
+    <figure class="w-32 bg-secondary">
         {#if !img}
             <div class="grid place-items-center">
                 <span class="text-5xl">{imgAsTxt}</span>

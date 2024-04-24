@@ -8,22 +8,25 @@
     $: fetchError = repos.length === 0 || err != null || totalStars === 0;
 </script>
 
-<section id="the-more-stuff" class="flex flex-col p-4 overflow-clip">
+<section
+    id="the-more-stuff"
+    class="flex flex-col p-4 overflow-clip text-primary-content"
+>
     <div class="p-4 prose mb-4 max-w-none">
-        <h1 class="">
+        <h1 class="text-neutral-content">
             Personal Projects <span class="whitespace-nowrap">
                 <i class="fas fa-star"></i>
                 {fetchError ? "?" : totalStars}
             </span>
             <span
-                class="text-xs text-base-content text-opacity-80 whitespace-nowrap"
+                class="text-xs text-opacity-80 whitespace-nowrap text-neutral-content"
                 >It ain't much, but it's honest work</span
             >
         </h1>
     </div>
     {#if fetchError}
         <div class="card mx-auto">
-            <div class="card-body">
+            <div class="card-body text-neutral-content">
                 <h1 class="card-title">
                     Oops 😅 Something went wrong while trying to load my Github
                     profile, please try again later.
@@ -33,7 +36,7 @@
         </div>
     {/if}
     <!-- Auto Grid -->
-    <div class="auto-grid place-items-center overflow-scroll fade-y">
+    <div class="auto-grid place-items-center overflow-scroll fade-y py-8">
         {#each repos as repo}
             <a
                 href={repo.html_url}
