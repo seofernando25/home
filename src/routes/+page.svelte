@@ -23,7 +23,6 @@
 
 <div class="fps-container bg text-neutral-content">
     <HomePage1 />
-    <span id="the-good-stuff"></span>
     {#if HomePage2}
         <HomePage2 />
     {/if}

@@ -1,7 +1,5 @@
 <script lang="ts">
     import ProjectTabs from "../ProjectTabs.svelte";
-    import PageSection from "../PageSection.svelte";
-    import ScrollIndicator from "../ScrollIndicator.svelte";
 
     const projects = [
         {

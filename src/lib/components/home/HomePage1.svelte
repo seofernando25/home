@@ -1,6 +1,5 @@
 <script lang="ts">
 	import TextSlashList from '../TextSlashList.svelte';
-	import ScrollIndicator from '../ScrollIndicator.svelte';
 
 	const imA = [
 		'Full-Stack Developer',
@@ -57,7 +56,5 @@
 			</div>
 		</div>
 	</div>
-
-    <ScrollIndicator href="#the-good-stuff" text="Scroll for more" />
 </section>
 
