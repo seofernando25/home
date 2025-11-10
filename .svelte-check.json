@@ -1,0 +1,10 @@
+{
+  "ignore": [
+    "css-unused-selector",
+    "css-unknown-at-rule"
+  ],
+  "compilerOptions": {
+    "skipLibCheck": true
+  }
+}
+

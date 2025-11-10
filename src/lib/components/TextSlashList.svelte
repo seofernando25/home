@@ -1,16 +1,22 @@
 <script lang="ts">
+    import { run } from 'svelte/legacy';
+
     import { onDestroy, onMount } from "svelte";
     import { fly } from "svelte/transition";
 
-    export let strings: string[] = [];
-    export let maxWCh = 15;
-    export let delay = 2000;
+    interface Props {
+        strings?: string[];
+        maxWCh?: number;
+        delay?: number;
+    }
 
-    let el: HTMLElement;
-    let boxH = 0;
-    let boxW = 0;
+    let { strings = [], maxWCh = 15, delay = 2000 }: Props = $props();
 
-    $: {
+    let el: HTMLElement | undefined = $state();
+    let boxH = $state(0);
+    let boxW = $state(0);
+
+    run(() => {
         boxW = Math.max(...strings.map((s) => s.length));
         boxW = Math.min(boxW, maxWCh);
 
@@ -24,9 +30,9 @@
             el.style.width = `${boxW + 1}ch`;
             el.style.height = `${boxH + 3}ch`;
         }
-    }
+    });
 
-    let current = 0;
+    let current = $state(0);
 
     function next() {
         current = (current + 1) % strings.length;
@@ -43,7 +49,7 @@
 </script>
 
 <div
-    class="bg-base-200 text-primary-content rounded text-center flex"
+    class="text-slash-container rounded text-center flex"
     bind:this={el}
 >
     {#key current}
@@ -52,3 +58,12 @@
         </span>
     {/key}
 </div>
+
+<style>
+    .text-slash-container {
+        background-color: hsl(var(--b2));
+        color: hsl(var(--pc));
+        border-radius: 0.5rem;
+        display: flex;
+    }
+</style>

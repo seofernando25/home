@@ -26,6 +26,8 @@
 
 <style>
   figure {
-    @apply h-full w-full flex-col;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
   }
 </style>

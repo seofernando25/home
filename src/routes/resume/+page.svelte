@@ -28,7 +28,7 @@
 
             <main class="flex flex-col gap-4">
                 <section
-                    class="rounded-xl card-compact outline grid grid-cols-1 sm:grid-cols-3"
+                    class="rounded-xl card-sm outline grid grid-cols-1 sm:grid-cols-3"
                 >
                     <div class="p-2">
                         <h3 class="m-0 card-title">Languages</h3>
@@ -87,7 +87,7 @@
                 </section>
 
                 <!-- Professional Summary -->
-                <section class="rounded-xl card-compact outline">
+                <section class="rounded-xl card-sm outline">
                     <div class="card-body">
                         <h3 class="m-0 card-title">Professional Summary</h3>
                         <p>
@@ -108,7 +108,7 @@
                     </div>
                 </section>
 
-                <section class="rounded-xl card-compact outline">
+                <section class="rounded-xl card-sm outline">
                     <div class="card-body">
                         <h3 class="m-0 card-title">Experience</h3>
                         <!-- 1 -->
@@ -274,7 +274,7 @@
     }
 
     .card-body {
-        @apply p-2;
+        padding: 0.5rem;
     }
 
     .l-outline {

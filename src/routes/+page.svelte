@@ -1,17 +1,35 @@
 <script lang="ts">
     import HomePage1 from "$lib/components/home/HomePage1.svelte";
-    import HomePage2 from "$lib/components/home/HomePage2.svelte";
-    import HomePage3 from "$lib/components/home/HomePage3.svelte";
 
-    export let data;
+    let { data } = $props();
+
+    // Lazy load components asynchronously after initial render
+    let HomePage2 = $state<typeof import("$lib/components/home/HomePage2.svelte").default>();
+    let History = $state<typeof import("$lib/components/home/History.svelte").default>();
+
+    // Load components asynchronously after initial render
+    $effect(() => {
+        // Load HomePage2
+        import("$lib/components/home/HomePage2.svelte").then(module => {
+            HomePage2 = module.default;
+        });
+
+        // Load History
+        import("$lib/components/home/History.svelte").then(module => {
+            History = module.default;
+        });
+    });
 </script>
 
 <div class="fps-container bg text-neutral-content">
     <HomePage1 />
-
-    <HomePage2 />
-
-    <HomePage3 err={data.err} repos={data.repos} totalStars={data.totalStars} />
+    <span id="the-good-stuff"></span>
+    {#if HomePage2}
+        <HomePage2 />
+    {/if}
+    {#if History}
+        <History />
+    {/if}
 </div>
 
 <style>

@@ -1,72 +1,26 @@
 <script lang="ts">
-    export let name = "Foo";
-    export let description = "Bar";
-    export let link = "#";
-    export let img: string | undefined = undefined;
-    export let imgAsTxt: string | undefined = "?";
-
-    let card: HTMLElement | null = null;
-    let highlight: HTMLElement | null = null;
-    let resetRotationTimeout: ReturnType<typeof setTimeout> | null = null;
-
-    const rotationLimit = 12;
-
-    function animateRotation(event: MouseEvent) {
-        if (resetRotationTimeout) clearTimeout(resetRotationTimeout);
-        if (!card) return;
-
-        const middleX = card.clientWidth / 2;
-        const middleY = card.clientHeight / 2;
-
-        const rect = card.getClientRects();
-        const left = rect[0].left;
-        const top = rect[0].top;
-
-        const relativeX = event.clientX - left;
-        const relativeY = event.clientY - top;
-
-        const rotXPercent = (relativeX - middleX) / middleX;
-        const rotYPercent = (relativeY - middleY) / middleY;
-        const rotateX = rotYPercent * rotationLimit;
-        const rotateY = rotXPercent * rotationLimit;
-        card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
-
-        // Highlight
-        if (!highlight) return;
-        highlight.style.transform = `translate(50%, -50%) translate(${-rotXPercent * 14}rem, ${
-            rotYPercent * 5.5
-        }rem)`;
+    interface Props {
+        name?: string;
+        description?: string;
+        link?: string;
+        img?: string | undefined;
+        imgAsTxt?: string | undefined;
     }
 
-    async function removeRotation() {
-        if (!card) return;
-
-        resetRotationTimeout = setTimeout(async () => {
-            if (!card) return;
-            if (!highlight) return;
-            card.style.transition = "all 0.2s";
-            card.style.transform = "rotateX(0deg) rotateY(0deg)";
-
-            highlight.style.transition = "all 0.2s";
-            highlight.style.transform = "translate(50%, -50%) translate(0, 0)";
-
-            await new Promise((resolve) => setTimeout(resolve, 225));
-
-            card.removeAttribute("style");
-            highlight.removeAttribute("style");
-        }, 200);
-    }
+    let {
+        name = "Foo",
+        description = "Bar",
+        link = "#",
+        img = undefined,
+        imgAsTxt = "?"
+    }: Props = $props();
 </script>
 
 <a
-    on:mousemove={animateRotation}
-    on:mouseleave={removeRotation}
-    bind:this={card}
-    class="card card-compact h-42 card-side bg-base-300 hover:shadow-md border-base-200 border-2 min-h-36"
+    class="project-card-link"
     href={link}
 >
-    <div bind:this={highlight} class="highlight"></div>
-    <figure class="w-32 bg-secondary">
+    <figure>
         {#if !img}
             <div class="grid place-items-center">
                 <span class="text-5xl">{imgAsTxt}</span>
@@ -82,29 +36,44 @@
 </a>
 
 <style>
-    figure {
-        min-width: 8rem;
-        max-width: 8rem;
-    }
-
-    .card {
+    .project-card-link {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
         overflow: hidden;
         box-sizing: border-box;
         position: relative;
+        text-decoration: none;
+        color: inherit;
+        min-height: 9rem;
     }
 
-    .highlight {
-        position: absolute;
-        top: 50%;
-        right: 50%;
-        transform: translate(50%, -50%);
-        width: 5rem;
-        height: 5rem;
-        border-radius: 50%;
-        background: white;
-        filter: blur(5rem);
-        opacity: 0.25;
-        z-index: 10;
-        pointer-events: none;
+    figure {
+        min-width: 8rem;
+        max-width: 8rem;
+        background-color: hsl(var(--s));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .card-body p {
+        margin: 0;
+        font-size: 0.875rem;
     }
 </style>

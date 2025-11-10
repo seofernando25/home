@@ -1,21 +1,10 @@
 // #FF8187
 // #34bf49
+// Note: Tailwind CSS v4 uses CSS-based configuration
+// DaisyUI is configured in src/app.css using @plugin "daisyui"
 const config = {
     content: ["./src/**/*.{html,js,svelte,ts}"],
-    plugins: [require("@tailwindcss/typography"), require("daisyui")],
-    daisyui: {
-        themes: [
-            {
-                default: {
-                    primary: "#34bf49",
-                    secondary: "#AEE5B6",
-                    accent: "#FF8187",
-                    neutral: "#000000",
-                    "base-100": "#AEE5B6",
-                },
-            },
-        ],
-    },
+    plugins: [require("@tailwindcss/typography")],
     theme: {
         extend: {
             typography: {

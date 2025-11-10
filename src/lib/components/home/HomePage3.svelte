@@ -1,32 +1,37 @@
 <script lang="ts">
     import type { Repo } from "$lib/types/Repo";
+    import PageSection from "../PageSection.svelte";
+    import "$lib/styles/fade-y.css";
 
-    export let err: any;
-    export let repos: Repo[] = [];
-    export let totalStars: number;
+    interface Props {
+        err: any;
+        repos?: Repo[];
+        totalStars: number;
+    }
 
-    $: fetchError = repos.length === 0 || err != null || totalStars === 0;
+    let { err, repos = [], totalStars }: Props = $props();
+
+    let fetchError = $derived(repos.length === 0 || err != null || totalStars === 0);
 </script>
 
-<section
-    id="the-more-stuff"
-    class="flex flex-col p-4 overflow-clip text-primary-content"
->
+<PageSection id="the-more-stuff">
+    <div class="flex flex-col h-full p-4 md:p-6 lg:p-8 overflow-clip" style="color: hsl(var(--pc));">
     <div class="p-4 prose mb-4 max-w-none">
-        <h1 class="text-neutral-content">
+        <h1 style="color: hsl(var(--nc));">
             Personal Projects <span class="whitespace-nowrap">
                 <i class="fas fa-star"></i>
                 {fetchError ? "?" : totalStars}
             </span>
             <span
-                class="text-xs text-opacity-80 whitespace-nowrap text-neutral-content"
+                class="text-xs whitespace-nowrap"
+                style="color: hsl(var(--nc)); opacity: 0.8;"
                 >It ain't much, but it's honest work</span
             >
         </h1>
     </div>
     {#if fetchError}
         <div class="card mx-auto">
-            <div class="card-body text-neutral-content">
+            <div class="card-body" style="color: hsl(var(--nc));">
                 <h1 class="card-title">
                     Oops 😅 Something went wrong while trying to load my Github
                     profile, please try again later.
@@ -40,7 +45,7 @@
         {#each repos as repo}
             <a
                 href={repo.html_url}
-                class="p-4 card card-compact bg-base-200 shadow-xl w-full h-42 hover:transform hover:scale-105 transition"
+                class="p-4 card card-sm bg-base-200 shadow-xl w-full h-42 hover:transform hover:scale-105 transition"
             >
                 <p class="card-title">{repo.name}</p>
                 <div class="card-body">
@@ -55,30 +60,15 @@
             </a>
         {/each}
     </div>
-</section>
+    </div>
+</PageSection>
 
 <style>
-    section {
-        height: 100vh;
-        height: 100dvh;
-
-        scroll-snap-align: start;
-    }
-
     .auto-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
         grid-gap: 1.5rem;
-    }
-
-    /* Fade the top and bottom of the scrollable area */
-    .fade-y {
-        mask-image: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 1) 5%,
-            rgba(0, 0, 0, 1) 90%,
-            rgba(0, 0, 0, 0) 95%
-        );
+        flex: 1;
+        overflow-y: auto;
     }
 </style>
