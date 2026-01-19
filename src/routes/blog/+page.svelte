@@ -1,40 +1,66 @@
 <script lang="ts">
-    import PageHeader from "$lib/components/ui/PageHeader.svelte";
+    import type { PageData } from './$types';
+    import ArticleCard from "$lib/components/ui/ArticleCard.svelte";
 
-    // Placeholder data
-    const posts = [
-        {
-            title: "Rebuilding my website with SvelteKit",
-            slug: "rebuilding-website",
-            date: "Jan 19, 2026",
-            excerpt: "A look into how I migrated my personal website to SvelteKit and adopted a brutalist design system."
-        },
-        {
-            title: "Why I use Arch Linux",
-            slug: "arch-linux",
-            date: "Dec 10, 2025",
-            excerpt: "An exploration of my daily driver OS and why I prefer it over other distributions."
-        }
-    ];
+    let { data }: { data: PageData } = $props();
 </script>
 
-<PageHeader 
-    title="Blog" 
-    subtitle="Thoughts, tutorials, and rants about software engineering." 
-/>
+<main class="blog-list-container">
+    <header class="section-header">
+        <div class="section-title-container">
+            <h1>Blog</h1>
+        </div>
+    </header>
 
-<div class="container mb-24">
     <div class="article-grid">
-        {#each posts as post}
-            <a href="/blog/{post.slug}" class="article-card">
-                <div class="content">
-                    <div class="meta">
-                        <span class="date">{post.date}</span>
-                    </div>
-                    <h3 class="mb-4">{post.title}</h3>
-                    <p class="text-muted text-sm">{post.excerpt}</p>
-                </div>
-            </a>
+        {#each data.posts as post}
+            <ArticleCard 
+                href="/blog/{post.slug}"
+                title={post.title}
+                date={post.date}
+                image={post.image}
+                badge={post.badge}
+            />
         {/each}
     </div>
-</div>
+</main>
+
+<style>
+    .blog-list-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 8rem 1.5rem 6rem;
+        min-height: 100vh;
+    }
+
+    .section-header {
+        margin-bottom: 4rem;
+    }
+
+    .section-title-container h1 {
+        font-size: 3rem;
+        font-weight: 500;
+        letter-spacing: -0.05em;
+        line-height: 1;
+        margin: 1.5rem 0;
+        color: var(--text-primary);
+    }
+
+    .article-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+        .article-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .article-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+</style>

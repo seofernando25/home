@@ -8,6 +8,7 @@ Employ a minimalist, data-first aesthetic that balances "Friendly" Brutalism wit
 - **Friendly Brutalism**: Sharp corners and visible borders softened by a warm palette.
 - **Data-First**: Monospaced fonts for technical data, numbers, and labels.
 - **Adaptive**: Seamless light and dark mode support using CSS variables.
+- **Flat Interaction**: No box shadows or translation effects on hover. Interactive states should rely on color changes, opacity, or border variations.
 
 ## Color Palette
 
@@ -39,8 +40,8 @@ Used for numbers, labels, navigation items, and metadata. Primarily uppercase fo
 Shared across all properties. Fixed header with backdrop blur and responsive behavior. Desktop menu uses numeric prefixes and horizontal spacing. Mobile menu employs a slide-down hamburger transition.
 
 ### Elements
-- **Buttons**: Sharp corners, 1px borders, uppercase Space Mono labels.
-- **Cards**: Surface background with subtle 1px Wood Beige borders.
+- **Buttons**: Sharp corners, 1px borders, uppercase Space Mono labels. No elevation or movement on hover.
+- **Cards**: Surface background with subtle 1px Wood Beige borders. Flat design (no drop shadows).
 - **Icons**: Line style icons with 2px stroke width.
 
 ## Implementation

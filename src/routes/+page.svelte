@@ -1,62 +1,78 @@
 <script lang="ts">
-    import Hero from "$lib/components/home/Hero.svelte";
-    import Marquee from "$lib/components/ui/Marquee.svelte";
-    
-    const marqueeItems = [
-        "TYPESCRIPT", "SVELTE", "RUST", "PYTHON", "GO", "DOCKER", "KUBERNETES", "POSTGRESQL", "TAILWIND", "LINUX"
+    import HeroProfile from "$lib/components/home/HeroProfile.svelte";
+    import Timeline from "$lib/components/ui/Timeline.svelte";
+    import TimelineItem from "$lib/components/ui/TimelineItem.svelte";
+
+    const timeline = [
+        {
+            year: "2025 - PRESENT",
+            title: "Master of Computer Science",
+            subtitle: "Concentration in Applied Artificial Intelligence",
+            org: "University of Ottawa",
+            description: "Deepening my knowledge in AI and its practical applications within computer science."
+        },
+        {
+            year: "2023 - 2023",
+            title: "Co-op Front-End Developer",
+            subtitle: "Trading Central",
+            org: "Trading Central",
+            description: "Developed sophisticated financial visualization tools and UIs using Angular. Introduced end-to-end testing methodologies and enhanced CI/CD pipelines."
+        },
+        {
+            year: "2023 - 2023",
+            title: "Co-op Full Stack Software Developer",
+            subtitle: "Engineering Outreach Department",
+            org: "University of Ottawa",
+            description: "Built custom CMS solutions and user-facing applications for university outreach events, managing both front-end and back-end components."
+        },
+        {
+            year: "2021 - PRESENT",
+            title: "Avionics Developer",
+            subtitle: "uOttawa Rocketry",
+            org: "uOttawa Rocketry",
+            description: "Focused on SRAD geospatial software, telemetry systems, and antenna tracking hardware for high-power rocketry."
+        },
+        {
+            year: "2021 - 2025",
+            title: "Honours Bachelor of Science",
+            subtitle: "Computer Science & Statistics",
+            org: "University of Ottawa",
+            description: "Completed my undergraduate degree with a strong foundation in algorithmic theory and statistical analysis."
+        }
     ];
 </script>
 
-<Hero />
-<Marquee items={marqueeItems} />
+<div class="page-container">
+    <HeroProfile 
+        name="Fernando Nogueira"
+        tagline="Software Engineer & Aspiring Wizard"
+        description="Full-stack developer, Linux enthusiast, and tinkerer. I build tools, break things, and occasionally fix them. Currently exploring the depths of AI and Computer Science."
+        avatarSrc="/favicon.webp"
+    />
 
-<section class="container">
-    <div class="section-header">
-        <div class="section-title-container">
-            <h2>Featured <span class="muted">Projects</span></h2>
-        </div>
-        <a href="/projects" class="back-link" style="margin-bottom: 0;">VIEW ALL PROJECTS -></a>
+    <div class="timeline-wrapper">
+        <Timeline title="History">
+            {#each timeline as item, i}
+                <TimelineItem 
+                    title={item.title}
+                    org={item.org}
+                    year={item.year}
+                    subtitle={item.subtitle}
+                    description={item.description}
+                    isLast={i === timeline.length - 1}
+                />
+            {/each}
+        </Timeline>
     </div>
+</div>
 
-    <!-- I should probably extract this to a component but for now I'll hardcode a few featured ones -->
-    <div class="article-grid">
-         <a href="https://bucket.seofernando.com" target="_blank" class="article-card">
-            <div class="image">
-                <div class="avatar-tile w-full h-full" style="width: 100%; height: 100%; font-size: 4rem;">🔗</div>
-                <div class="image-badge">WEB APP</div>
-            </div>
-            <div class="content">
-                <div class="meta">
-                    <span class="date">2024</span>
-                </div>
-                <h3>StealthShare - Temporary File Hosting</h3>
-            </div>
-        </a>
-
-        <a href="https://os.seofernando.com" target="_blank" class="article-card">
-            <div class="image">
-                <div class="avatar-tile w-full h-full" style="width: 100%; height: 100%; font-size: 4rem;">💻</div>
-                <div class="image-badge">EDUCATIONAL</div>
-            </div>
-            <div class="content">
-                <div class="meta">
-                    <span class="date">2024</span>
-                </div>
-                <h3>OS Calculators - Process Scheduling</h3>
-            </div>
-        </a>
-
-         <a href="https://sam.seofernando.com/" target="_blank" class="article-card">
-            <div class="image">
-                <div class="avatar-tile w-full h-full" style="width: 100%; height: 100%; font-size: 4rem;">🗣️</div>
-                <div class="image-badge">TOOL</div>
-            </div>
-            <div class="content">
-                <div class="meta">
-                    <span class="date">2023</span>
-                </div>
-                <h3>SAM TTS - Text to Speech</h3>
-            </div>
-        </a>
-    </div>
-</section>
+<style>
+    .page-container {
+        padding-top: 8rem;
+    }
+    
+    .timeline-wrapper {
+        margin-top: 4rem;
+        padding-bottom: 6rem;
+    }
+</style>

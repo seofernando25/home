@@ -5,27 +5,34 @@ excerpt: An exploration of my daily driver OS and why I prefer it over other dis
 ---
 
 <script>
-    import PageHeader from "$lib/components/ui/PageHeader.svelte";
 </script>
 
-<PageHeader title={title} subtitle={date} />
-
-<div class="container mb-24 max-w-3xl">
+<article class="blog-post">
+    <a href="/blog" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Blog
+    </a>
+    <header>
+        <span class="meta">Published: {date}</span>
+        <h1>{title}</h1>
+    </header>
     <div class="post-content">
-        
-        ## The Philosophy
 
-        Arch Linux follows the KISS principle (Keep It Simple, Stupid). This doesn't mean it's simple to use, but rather simple in its internal design.
+## The Philosophy
 
-        ## The Rolling Release
+Arch Linux follows the KISS principle (Keep It Simple, Stupid). This doesn't mean it's simple to use, but rather simple in its internal design.
 
-        One of the biggest advantages is the rolling release model. I never have to worry about major version upgrades breaking my system.
+## The Rolling Release
 
-        > "I use Arch btw" - Every Arch user ever.
+One of the biggest advantages is the rolling release model. I never have to worry about major version upgrades breaking my system.
 
-        ## Pacman & AUR
+> "I use Arch btw" - Every Arch user ever.
 
-        The package manager is incredibly fast, and the AUR (Arch User Repository) contains almost every piece of software you could imagine.
+## Pacman & AUR
 
-    </div>
+The package manager is incredibly fast, and the AUR (Arch User Repository) contains almost every piece of software you could imagine.
+
 </div>
+</article>

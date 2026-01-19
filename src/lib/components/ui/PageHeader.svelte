@@ -8,7 +8,6 @@
 </script>
 
 <div class="page-header-container">
-    <div class="bg-grid"></div>
     <div class="header-content">
         <h1 class="page-title">{title}</h1>
         {#if subtitle}
@@ -23,9 +22,7 @@
         padding-top: 8rem;
         padding-bottom: 4rem;
         text-align: center;
-        background-color: var(--bg-primary);
-        overflow: hidden;
-        margin-bottom: 4rem;
+        background-color: transparent;
     }
 
     .header-content {
@@ -50,10 +47,5 @@
         font-size: 1rem;
         color: var(--text-muted);
         line-height: 1.6;
-    }
-
-    /* Reuse existing classes or define specific ones */
-    .bg-grid {
-        z-index: 0;
     }
 </style>

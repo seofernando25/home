@@ -16,8 +16,31 @@
 
 <Header />
 
-<main class="flex-1 w-full pb-16">
-    {@render children?.()}
+<main class="main-container">
+    <div class="bg-grid"></div>
+    <div class="main-content">
+        {@render children?.()}
+    </div>
 </main>
 
 <Footer />
+
+<style>
+    .main-container {
+        position: relative;
+        flex: 1;
+        width: 100%;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .main-content {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .main-content > :global(*) {
+        margin-top: 0;
+    }
+</style>

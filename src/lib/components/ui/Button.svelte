@@ -10,28 +10,70 @@
     'aria-label'?: string;
   }
   let { href, target, rel, variant = 'primary', class: className = '', children, onclick, 'aria-label': ariaLabel }: Props = $props();
-  
-  const baseClasses = "inline-flex items-center justify-center px-6 py-3 border text-sm font-mono uppercase tracking-wider transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-border-primary focus:ring-offset-2 cursor-pointer sharp-corners";
-  
-  const variants = {
-    primary: "bg-text-primary text-background border-text-primary hover:bg-transparent hover:text-text-primary",
-    outline: "bg-transparent text-text-primary border-border-primary hover:bg-border-primary hover:text-white",
-    ghost: "bg-transparent text-text-primary border-transparent hover:bg-surface"
-  };
 </script>
 
 {#if href}
-  <a {href} {target} {rel} class="{baseClasses} {variants[variant]} {className}" aria-label={ariaLabel}>
+  <a {href} {target} {rel} class="btn btn--{variant} {className}" aria-label={ariaLabel}>
     {@render children?.()}
   </a>
 {:else}
-  <button class="{baseClasses} {variants[variant]} {className}" {onclick} aria-label={ariaLabel}>
+  <button class="btn btn--{variant} {className}" {onclick} aria-label={ariaLabel}>
     {@render children?.()}
   </button>
 {/if}
 
 <style>
-  .sharp-corners {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem; /* px-6 py-3 */
+    border: 1px solid transparent;
+    font-size: 0.875rem; /* text-sm */
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.05em; /* tracking-wider */
+    transition: all 0.2s ease;
+    cursor: pointer;
     border-radius: 0;
+    line-height: 1.25;
+    background: none;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .btn:focus {
+    outline: none;
+    background-color: var(--bg-surface-hover);
+  }
+
+  /* Variants */
+  .btn--primary {
+    background-color: var(--text-primary);
+    color: var(--bg-surface);
+    border-color: var(--text-primary);
+  }
+  .btn--primary:hover {
+    background-color: transparent;
+    color: var(--text-primary);
+  }
+
+  .btn--outline {
+    background-color: transparent;
+    color: var(--text-primary);
+    border-color: var(--border-color);
+  }
+  .btn--outline:hover {
+    background-color: var(--border-color);
+    color: var(--bg-surface);
+  }
+
+  .btn--ghost {
+    background-color: transparent;
+    color: var(--text-primary);
+    border-color: transparent;
+  }
+  .btn--ghost:hover {
+    background-color: var(--bg-surface-hover);
   }
 </style>

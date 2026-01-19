@@ -35,7 +35,6 @@
         <div class="nav-left">
             <a href="/" class="logo">
                 <img src="/favicon.webp" alt="Fernando" class="logo-image">
-                <span class="logo-text">FERNANDO</span>
             </a>
 
             <div class="desktop-menu">
@@ -47,12 +46,8 @@
                     <span class="menu-number">02</span>
                     <span class="menu-label">Projects</span>
                 </a>
-                <a href="/about" class="menu-item">
-                    <span class="menu-number">03</span>
-                    <span class="menu-label">About</span>
-                </a>
                 <a href="/blog" class="menu-item">
-                    <span class="menu-number">04</span>
+                    <span class="menu-number">03</span>
                     <span class="menu-label">Blog</span>
                 </a>
             </div>
@@ -93,8 +88,7 @@
     <div class="mobile-menu {isMenuOpen ? 'open' : ''}" id="mobile-menu">
         <a href="/" class="mobile-menu-link" onclick={toggleMenu}>01 Home</a>
         <a href="/projects" class="mobile-menu-link" onclick={toggleMenu}>02 Projects</a>
-        <a href="/about" class="mobile-menu-link" onclick={toggleMenu}>03 About</a>
-        <a href="/blog" class="mobile-menu-link" onclick={toggleMenu}>04 Blog</a>
+        <a href="/blog" class="mobile-menu-link" onclick={toggleMenu}>03 Blog</a>
         
         <div class="mobile-divider"></div>
         
@@ -112,3 +106,236 @@
         <a href="mailto:abert036@uottawa.ca" class="mobile-menu-link">Contact</a>
     </div>
 </nav>
+
+<style>
+    .site-nav {
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        background-color: var(--bg-primary);
+        opacity: 0.95;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border-color);
+        height: var(--nav-height);
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        color: var(--text-primary);
+        transition: opacity 0.2s, color 0.3s ease;
+    }
+
+    .logo-image {
+        width: 2rem;
+        height: 2rem;
+        object-fit: contain;
+        display: block;
+    }
+
+    .desktop-menu {
+        display: none;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    @media (min-width: 1024px) {
+        .desktop-menu {
+            display: flex;
+        }
+    }
+
+    .menu-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .menu-number {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+    }
+
+    .menu-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 500;
+        color: var(--text-muted);
+        transition: color 0.3s ease;
+    }
+
+    .menu-item:hover .menu-number,
+    .menu-item:hover .menu-label {
+        color: var(--text-primary);
+    }
+
+    .theme-toggle {
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        cursor: pointer;
+        padding: 0.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: color 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+        color: var(--text-primary);
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text-primary);
+        cursor: pointer;
+        padding: 0;
+    }
+
+    @media (min-width: 1024px) {
+        .mobile-menu-btn {
+            display: none;
+        }
+    }
+
+    .mobile-menu {
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-primary);
+        border-bottom: 1px solid var(--border-color);
+        padding: 1.5rem;
+        display: none;
+        flex-direction: column;
+        gap: 1.5rem;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+        z-index: 100;
+    }
+
+    .mobile-menu.open {
+        display: flex;
+    }
+
+    .mobile-menu-link {
+        font-size: 0.875rem;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        color: var(--text-primary);
+        text-decoration: none;
+    }
+
+    .mobile-theme-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .mobile-theme-label {
+        font-size: 0.875rem;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        color: var(--text-muted);
+        flex-shrink: 0;
+    }
+
+    .mobile-theme-btn {
+        color: var(--text-primary);
+        padding: 0.5rem;
+        border: 1px solid var(--border-color);
+        background: none;
+        border-radius: 4px;
+        cursor: pointer;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cta-buttons {
+        display: none;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+        .cta-buttons {
+            display: flex;
+        }
+    }
+
+    .cta-link {
+        font-size: 0.75rem;
+        font-family: var(--font-mono);
+        color: var(--text-muted);
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: color 0.3s ease;
+    }
+
+    .cta-link:hover {
+        color: var(--text-primary);
+    }
+
+    .cta-button {
+        background-color: var(--text-primary);
+        color: var(--bg-primary);
+        padding: 0.5rem 1.25rem;
+        font-size: 0.75rem;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        font-weight: 700;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .cta-button:hover {
+        opacity: 0.9;
+    }
+
+    .divider {
+        height: 1rem;
+        width: 1px;
+        background-color: var(--border-color);
+        transition: background-color 0.3s ease;
+    }
+
+    .mobile-divider {
+        height: 1px;
+        background-color: var(--border-color);
+        width: 100%;
+    }
+</style>

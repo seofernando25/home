@@ -1,5 +1,6 @@
 <script lang="ts">
     import PageHeader from "$lib/components/ui/PageHeader.svelte";
+    import Card from "$lib/components/ui/Card.svelte";
 
     const projects = [
         {
@@ -66,23 +67,45 @@
     subtitle="A collection of tools, experiments, and applications I've built." 
 />
 
-<div class="container mb-24">
-    <div class="article-grid">
+<div class="page-content">
+    <div class="grid-layout">
         {#each projects as project}
-            <a href={project.link} target="_blank" class="article-card">
-                <div class="image">
-                    {#if project.img}
-                         <img src={project.img} alt={project.name} class="w-full h-full object-contain p-8 bg-surface" />
-                    {:else}
-                        <div class="avatar-tile w-full h-full" style="width: 100%; height: 100%; font-size: 4rem;">{project.imgAsTxt}</div>
-                    {/if}
-                    <div class="image-badge">{project.type}</div>
-                </div>
-                <div class="content">
-                    <h3>{project.name}</h3>
-                    <p class="text-muted text-sm mt-2">{project.description}</p>
-                </div>
-            </a>
+            <Card 
+                href={project.link}
+                title={project.name}
+                description={project.description}
+                imageSrc={project.img}
+                imageFallback={project.imgAsTxt}
+                badge={project.type}
+                target="_blank"
+            />
         {/each}
     </div>
 </div>
+
+<style>
+    .page-content {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        padding-bottom: 6rem;
+    }
+
+    .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        .grid-layout {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        .grid-layout {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+</style>
