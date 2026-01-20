@@ -50,10 +50,10 @@
         height: 100%;
         background-color: var(--bg-surface);
         border: 1px solid var(--border-color);
-        transition: all 0.2s ease;
         text-decoration: none;
         color: inherit;
         overflow: hidden;
+        transition: all 0.2s ease;
     }
 
     .card:hover {
@@ -64,8 +64,8 @@
     .card-image-wrapper {
         position: relative;
         height: 12rem;
-        border-bottom: 1px solid var(--border-color);
         background-color: var(--bg-surface-hover);
+        border-bottom: 1px solid var(--border-color);
         overflow: hidden;
         display: flex;
         align-items: center;

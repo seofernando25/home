@@ -24,14 +24,11 @@
     }
 
     .timeline-title {
-        font-size: 1.5rem; /* 2xl */
+        font-size: 2.25rem;
         font-weight: 700;
-        font-family: var(--font-mono);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--text-muted);
-        margin-bottom: 3rem;
-        padding-left: 1rem;
+        font-family: var(--font-primary);
+        letter-spacing: -0.025em;
+        color: var(--text-primary);
         padding-bottom: 1rem;
         border-bottom: 1px solid var(--border-color);
     }

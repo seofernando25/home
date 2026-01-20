@@ -171,7 +171,6 @@
         line-height: 1.5;
         opacity: 0.8;
         font-weight: 400;
-        margin: 0;
     }
 
     @media (max-width: 768px) {
@@ -219,7 +218,6 @@
         justify-content: center;
         padding: 0;
         height: clamp(300px, 40dvh, 474px);
-        margin: 0;
         width: 100%;
         transition: grid-template-columns var(--speed) var(--easing);
     }
@@ -299,7 +297,6 @@
         text-transform: uppercase;
         font-family: monospace;
         white-space: nowrap;
-        margin: 0;
     }
 
 
@@ -343,7 +340,6 @@
     article .description-container p {
         font-size: 13px;
         line-height: 1.25;
-        margin: 0;
         opacity: 0.8;
         overflow-wrap: anywhere;
         word-wrap: break-word;
@@ -371,7 +367,6 @@
     }
 
     .mobile-description {
-        margin: 0;
         font-size: 14px;
         line-height: 1.6;
         max-width: 100% !important;

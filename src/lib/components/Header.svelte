@@ -50,6 +50,10 @@
                     <span class="menu-number">03</span>
                     <span class="menu-label">Blog</span>
                 </a>
+                <a href="/research" class="menu-item">
+                    <span class="menu-number">04</span>
+                    <span class="menu-label">Research</span>
+                </a>
             </div>
         </div>
 
@@ -64,7 +68,11 @@
 
             <div class="divider"></div>
 
-            <a href="https://github.com/SeoFernando25" class="cta-link" aria-label="GitHub">GITHUB</a>
+            <a href="https://github.com/SeoFernando25" class="cta-link" aria-label="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+            </a>
 
             <div class="divider"></div>
 
@@ -89,6 +97,7 @@
         <a href="/" class="mobile-menu-link" onclick={toggleMenu}>01 Home</a>
         <a href="/projects" class="mobile-menu-link" onclick={toggleMenu}>02 Projects</a>
         <a href="/blog" class="mobile-menu-link" onclick={toggleMenu}>03 Blog</a>
+        <a href="/research" class="mobile-menu-link" onclick={toggleMenu}>04 Research</a>
         
         <div class="mobile-divider"></div>
         
@@ -295,12 +304,13 @@
     }
 
     .cta-link {
-        font-size: 0.75rem;
-        font-family: var(--font-mono);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         color: var(--text-muted);
         text-decoration: none;
-        text-transform: uppercase;
         transition: color 0.3s ease;
+        padding: 0.25rem;
     }
 
     .cta-link:hover {

@@ -30,16 +30,24 @@ export const load: PageLoad = async () => {
         
         const slug = slugMatch[1];
         
-        // Support image paths - can be relative to static or absolute
+        // Support image paths with convenient conventions:
+        // 1. Explicit in frontmatter: `image: "thumbnail.jpg"` → /blog/{slug}/thumbnail.jpg
+        // 2. Explicit absolute: `image: "/blog/slug/image.jpg"` → use as-is
+        // 3. Auto-convention: If no image specified, try /blog/{slug}/thumbnail.jpg
+        //    (component will gracefully handle if file doesn't exist)
         let imagePath = metadata.image;
-        if (imagePath && !imagePath.startsWith('http') && !imagePath.startsWith('/')) {
-            // If relative, assume it's in /static/blog/{slug}/
-            imagePath = `/blog/${slug}/${imagePath}`;
-        } else if (imagePath && imagePath.startsWith('/blog/')) {
-            // Already a proper path
-        } else if (!imagePath) {
-            // Try convention: /static/blog/{slug}.jpg or /static/blog/{slug}/image.jpg
-            // We'll check this in the component or use a default
+        
+        if (imagePath) {
+            // User provided an image path
+            if (!imagePath.startsWith('http') && !imagePath.startsWith('/')) {
+                // Relative path: assume it's in /static/blog/{slug}/
+                imagePath = `/blog/${slug}/${imagePath}`;
+            }
+            // If it starts with / or http, use as-is
+        } else {
+            // No image in frontmatter - use convention: /static/blog/{slug}/thumbnail.jpg
+            // The component will hide the image if it doesn't exist
+            imagePath = `/blog/${slug}/thumbnail.jpg`;
         }
         
         posts.push({

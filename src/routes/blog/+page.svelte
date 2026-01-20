@@ -9,6 +9,7 @@
     <header class="section-header">
         <div class="section-title-container">
             <h1>Blog</h1>
+            <p class="section-subtitle">Food for thought.</p>
         </div>
     </header>
 
@@ -34,22 +35,30 @@
     }
 
     .section-header {
-        margin-bottom: 4rem;
+        padding-bottom: 4rem;
     }
 
     .section-title-container h1 {
         font-size: 3rem;
-        font-weight: 500;
+        font-weight: 700;
+        font-family: var(--font-primary);
         letter-spacing: -0.05em;
         line-height: 1;
-        margin: 1.5rem 0;
+        padding-bottom: 1rem;
         color: var(--text-primary);
+    }
+
+    .section-subtitle {
+        font-family: var(--font-mono);
+        font-size: 1rem;
+        color: var(--text-muted);
     }
 
     .article-grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        align-items: stretch;
     }
 
     @media (min-width: 768px) {

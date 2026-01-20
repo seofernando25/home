@@ -43,35 +43,37 @@
 <style>
     .timeline-item {
         position: relative;
-        padding-left: 4rem; /* pl-16 */
+        padding-left: 3rem;
     }
+    
     @media (min-width: 768px) {
         .timeline-item {
-            padding-left: 6rem; /* pl-24 */
+            padding-left: 4rem;
         }
     }
 
     .has-spacing {
-        margin-bottom: 5rem; /* mb-20 */
+        margin-bottom: 4rem;
     }
 
     .timeline-dot {
         position: absolute;
-        left: -0.46rem; /* -left-[7.5px] roughly calculated */
+        left: -0.5rem;
         top: 0.5rem;
-        width: 0.875rem; /* 3.5 = 0.875rem */
-        height: 0.875rem;
+        width: 1rem;
+        height: 1rem;
         background-color: var(--bg-primary);
-        border: 2px solid var(--border-color);
+        border: 1px solid var(--border-color);
     }
 
     .timeline-header {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 1.5rem;
-        margin-bottom: 1.5rem;
+        gap: 1rem;
+        margin-bottom: 1rem;
     }
+    
     @media (min-width: 768px) {
         .timeline-header {
             flex-direction: row;
@@ -84,22 +86,22 @@
     }
 
     .item-title {
-        font-size: 1.5rem; /* 2xl */
+        font-size: 1.25rem;
         font-weight: 700;
         font-family: var(--font-primary);
         color: var(--text-primary);
         letter-spacing: -0.025em;
-        line-height: 1;
+        line-height: 1.3;
         margin-bottom: 0.5rem;
     }
 
     .item-org {
         font-family: var(--font-mono);
-        font-size: 0.875rem; /* text-sm */
+        font-size: 0.875rem;
         text-transform: uppercase;
         letter-spacing: 0.05em;
-        color: var(--border-color);
-        font-weight: 700;
+        color: var(--text-muted);
+        font-weight: 400;
     }
 
     .timeline-meta {
@@ -108,12 +110,12 @@
 
     .item-year {
         font-family: var(--font-mono);
-        font-size: 0.625rem; /* 10px */
+        font-size: 0.75rem;
         text-transform: uppercase;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.1em;
         color: var(--text-muted);
         background-color: var(--bg-surface);
-        padding: 0.375rem 0.75rem;
+        padding: 0.5rem 0.75rem;
         border: 1px solid var(--border-color);
         display: inline-block;
     }
@@ -127,17 +129,18 @@
     .item-subtitle {
         font-family: var(--font-primary);
         font-size: 0.875rem;
-        font-weight: 600;
-        color: var(--text-primary);
-        opacity: 0.7;
-        font-style: italic;
+        font-weight: 400;
+        color: var(--text-muted);
+        margin-bottom: 0.5rem;
     }
 
     .item-description {
+        font-family: var(--font-primary);
         color: var(--text-primary);
         opacity: 0.8;
-        line-height: 1.625;
+        line-height: 1.6;
         max-width: 42rem;
-        font-size: 1rem;
+        font-size: 0.9375rem;
+        font-weight: 400;
     }
 </style>

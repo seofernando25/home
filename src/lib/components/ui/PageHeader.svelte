@@ -21,7 +21,7 @@
         position: relative;
         padding-top: 8rem;
         padding-bottom: 4rem;
-        text-align: center;
+        text-align: left;
         background-color: transparent;
     }
 

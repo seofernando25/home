@@ -1,14 +1,9 @@
 <script lang="ts">
     import SocialButton from "$lib/components/ui/SocialButton.svelte";
 
-    interface Props {
-        name: string;
-        tagline: string;
-        description: string;
-        avatarSrc: string;
-    }
-
-    let { name, tagline, description, avatarSrc }: Props = $props();
+    const name = "Fernando Nogueira";
+    const tagline = "Software Engineer & Aspiring Wizard";
+    const avatarSrc = "/favicon.webp";
 </script>
 
 <section class="hero-profile">
@@ -36,21 +31,16 @@
             </div>
         </div>
         
-        <p class="description">
-             {description}
-        </p>
+        <div class="description">
+            <p>I'm a Master's Student at the Faculty of Engineering in the University of Ottawa, Canada.</p>
+            <p>My main interests are focused on Telemetry intelligence, Machine Learning and System Architecture.</p>
+            <p>I like to build tools, break things, and occasionally fix them.</p>
+            <p>I use Arch btw.</p>
+        </div>
     </div>
 </section>
 
 <style>
-    .hero-profile {
-        position: relative;
-        padding-top: 8rem;
-        padding-bottom: 4rem;
-        background-color: transparent;
-        margin-bottom: 4rem;
-    }
-
     .hero-inner {
         max-width: 56rem; /* 4xl */
         margin: 0 auto;
@@ -91,9 +81,6 @@
         object-fit: cover;
     }
 
-    .profile-content {
-        flex: 1;
-    }
 
     .name {
         font-size: 2.25rem; /* text-4xl */
@@ -101,8 +88,7 @@
         font-family: var(--font-primary);
         color: var(--text-primary);
         letter-spacing: -0.025em;
-        margin-bottom: 0.5rem;
-        line-height: 1.1;
+        line-height: 1.25ch;
     }
 
     @media (min-width: 768px) {
@@ -115,7 +101,7 @@
         font-family: var(--font-mono);
         font-size: 1.125rem; /* text-lg */
         color: var(--text-muted);
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .social-row {
@@ -123,12 +109,11 @@
         gap: 1rem;
     }
 
-    .description {
+    .description p {
+        font-family: var(--font-primary);
         color: var(--text-primary);
         opacity: 0.8;
-        line-height: 1.625;
-        max-width: 42rem; /* max-w-2xl */
-        font-size: 1.125rem; /* text-lg */
-        margin-top: 1rem;
+        margin-bottom: 1.25rem;
     }
+
 </style>

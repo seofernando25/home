@@ -1,5 +1,4 @@
 <script lang="ts">
-    import PageHeader from "$lib/components/ui/PageHeader.svelte";
     import Card from "$lib/components/ui/Card.svelte";
 
     const projects = [
@@ -62,12 +61,14 @@
     ];
 </script>
 
-<PageHeader 
-    title="Projects" 
-    subtitle="A collection of tools, experiments, and applications I've built." 
-/>
+<main class="page-container">
+    <header class="section-header">
+        <div class="section-title-container">
+            <h1>Projects</h1>
+            <p class="section-subtitle">Tools and pet projects.</p>
+        </div>
+    </header>
 
-<div class="page-content">
     <div class="grid-layout">
         {#each projects as project}
             <Card 
@@ -81,20 +82,42 @@
             />
         {/each}
     </div>
-</div>
+</main>
 
 <style>
-    .page-content {
-        max-width: 80rem;
+    .page-container {
+        max-width: 1400px;
         margin: 0 auto;
-        padding: 0 1.5rem;
-        padding-bottom: 6rem;
+        padding: 8rem 1.5rem 6rem;
+        min-height: 100vh;
+    }
+
+    .section-header {
+        padding-bottom: 4rem;
+    }
+
+    .section-title-container h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        font-family: var(--font-primary);
+        letter-spacing: -0.05em;
+        line-height: 1;
+        padding-bottom: 1rem;
+        color: var(--text-primary);
+    }
+
+    .section-subtitle {
+        font-family: var(--font-mono);
+        font-size: 1rem;
+        color: var(--text-muted);
+        line-height: 1.6;
     }
 
     .grid-layout {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
+        align-items: stretch;
     }
 
     @media (min-width: 768px) {

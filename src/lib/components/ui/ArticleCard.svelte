@@ -8,12 +8,18 @@
     }
 
     let { href, title, date, image, badge }: Props = $props();
+    
+    let imageError = $state(false);
+    
+    function handleImageError() {
+        imageError = true;
+    }
 </script>
 
 <a href={href} class="article-card">
-    <div class="image">
+    <div class="image" class:no-image={imageError}>
         {#if image}
-            <img src={image} alt={title} />
+            <img src={image} alt={title} onerror={handleImageError} style:display={imageError ? 'none' : 'block'} />
         {/if}
         <div class="overlay"></div>
         {#if badge}
@@ -33,10 +39,12 @@
 <style>
     .article-card {
         display: block;
-        border: 1px solid var(--border-color);
+        height: 100%;
         background-color: var(--bg-surface);
+        border: 1px solid var(--border-color);
         padding: 0.25rem;
         text-decoration: none;
+        color: inherit;
         transition: all 0.3s ease;
     }
 
@@ -71,6 +79,7 @@
         transition: background-color 0.2s;
         background-color: var(--text-primary);
         opacity: 0.05;
+        pointer-events: none;
     }
 
     .image-badge {
@@ -92,9 +101,6 @@
     }
 
     .meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         margin-bottom: 0.75rem;
     }
 
@@ -107,12 +113,12 @@
     }
 
     h3 {
+        font-family: var(--font-primary);
         font-size: 1.125rem;
         font-weight: 400;
         line-height: 1.4;
         transition: color 0.2s;
         color: var(--text-primary);
-        margin: 0;
     }
 
     .article-card:hover h3 {

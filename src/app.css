@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", sans-serif;
   --font-mono: "Space Mono", monospace;
 }
 
@@ -14,14 +13,6 @@
     --text-muted: #595959;
     --border-color: #634936;
     --grid-line: rgba(99, 73, 54, 0.1);
-    --selection-bg: #1a1a1b;
-    --selection-text: #efede5;
-
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 1.5rem;
-    --space-lg: 2rem;
-    --space-xl: 4rem;
 
     --font-primary: 'Inter', system-ui, sans-serif;
     --font-mono: 'Space Mono', monospace;
@@ -36,8 +27,6 @@ html.dark {
     --text-muted: #a3a393;
     --border-color: #634936;
     --grid-line: #2a2a2b;
-    --selection-bg: #efede5;
-    --selection-text: #1a1a1b;
 }
 
 html {
@@ -61,7 +50,7 @@ body {
 a { color: inherit; text-decoration: none; transition: opacity 0.2s; }
 a:hover { opacity: 0.8; }
 
-h1, h2, h3, h4 { line-height: 1.2; margin-bottom: var(--space-sm); }
+h1, h2, h3, h4 { line-height: 1.2; }
 
 .bg-grid {
     position: absolute;
@@ -79,15 +68,7 @@ h1, h2, h3, h4 { line-height: 1.2; margin-bottom: var(--space-sm); }
     pointer-events: none;
 }
 
-/* 2. Global Layout */
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
-
-/* 3. Page Sections */
+/* 2. Page Sections */
 
 /* Blog */
 .back-link {
@@ -130,7 +111,6 @@ h1, h2, h3, h4 { line-height: 1.2; margin-bottom: var(--space-sm); }
     font-weight: 500;
     letter-spacing: -0.05em;
     line-height: 1.1;
-    margin: 0;
 }
 
 .post-content {
@@ -150,9 +130,3 @@ h1, h2, h3, h4 { line-height: 1.2; margin-bottom: var(--space-sm); }
 .post-content p { margin-bottom: 1.5rem; }
 .post-content ul, .post-content ol { margin-bottom: 2rem; padding-left: 1.5rem; }
 .post-content li { margin-bottom: 1rem; }
-
-/* 4. Utilities */
-.text-muted { color: var(--text-muted); }
-.hidden { display: none; }
-.mt-lg { margin-top: 2rem; }
-.mb-lg { margin-bottom: 2rem; }
