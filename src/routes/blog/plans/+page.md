@@ -1,7 +1,7 @@
 ---
 title: Plans
 date: "Jan 19, 2026"
-excerpt: A look into how I migrated my personal website to SvelteKit and adopted a brutalist design system.
+excerpt: What is a plan anyways?
 badge: IDEAS
 ---
 
