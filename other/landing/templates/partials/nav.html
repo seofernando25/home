@@ -1,0 +1,109 @@
+{{define "nav"}}
+<nav class="site-nav">
+    <div class="nav-container">
+        <div class="nav-left">
+            <a href="/" class="logo">
+                <img src="/images/logo.png" alt="OhRats" class="logo-image">
+                <span class="logo-text">OhRats</span>
+            </a>
+
+            <div class="desktop-menu">
+                <a href="/#nash" class="menu-item">
+                    <span class="menu-number">01</span>
+                    <span class="menu-label">Nash</span>
+                </a>
+                <a href="/#research" class="menu-item">
+                    <span class="menu-number">02</span>
+                    <span class="menu-label">Research</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="cta-buttons">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <!-- Icon inserted by JS -->
+            </button>
+
+            <div class="divider"></div>
+
+            <a href="https://github.com/OhRats-Technologies" class="cta-link" aria-label="GitHub">GITHUB</a>
+
+            <div class="divider"></div>
+
+            <a href="/blog" class="cta-link">BLOG</a>
+
+            <a href="mailto:contact@ohrats.party" class="cta-button">
+                Contact
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Open menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="https://nash.ohrats.party" class="mobile-menu-link">01 Nash</a>
+        <a href="#research" class="mobile-menu-link">02 Research</a>
+        <a href="/blog" class="mobile-menu-link">03 Blog</a>
+        <a href="https://github.com/OhRats-Technologies" class="mobile-menu-link">04 Github</a>
+        
+        <div class="mobile-divider"></div>
+        
+        <div class="mobile-theme-row">
+            <span class="mobile-theme-label">Theme</span>
+            <button class="mobile-theme-btn" id="mobile-theme-toggle">
+                <!-- Icon inserted by JS -->
+            </button>
+        </div>
+
+        <a href="mailto:contact@ohrats.party" class="mobile-menu-link">Contact</a>
+    </div>
+</nav>
+
+<script>
+    (function() {
+        const toggleBtn = document.getElementById('theme-toggle');
+        const mobileThemeBtn = document.getElementById('mobile-theme-toggle');
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        const sunIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+        function updateIcons() {
+            const isDark = document.documentElement.classList.contains('dark');
+            const icon = isDark ? sunIcon : moonIcon;
+            if (toggleBtn) toggleBtn.innerHTML = icon;
+            if (mobileThemeBtn) mobileThemeBtn.innerHTML = icon;
+        }
+
+        updateIcons();
+
+        const handleThemeToggle = () => {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+            updateIcons();
+        };
+
+        if (toggleBtn) toggleBtn.addEventListener('click', handleThemeToggle);
+        if (mobileThemeBtn) mobileThemeBtn.addEventListener('click', handleThemeToggle);
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+        }
+    })();
+</script>
+{{end}}
+

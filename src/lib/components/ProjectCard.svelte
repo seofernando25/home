@@ -8,8 +8,8 @@
     }
 
     let {
-        name = "Foo",
-        description = "Bar",
+        name = "Project",
+        description = "Description",
         link = "#",
         img = undefined,
         imgAsTxt = "?"
@@ -17,63 +17,24 @@
 </script>
 
 <a
-    class="project-card-link"
+    class="project-card group block h-full border border-border-primary bg-surface p-6 transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0_0_var(--color-border-primary)]"
     href={link}
+    target="_blank"
+    rel="noopener noreferrer"
 >
-    <figure>
-        {#if !img}
-            <div class="grid place-items-center">
-                <span class="text-5xl">{imgAsTxt}</span>
-            </div>
-        {:else}
-            <img src={img} alt="Project Logo" class="p-4 object-contain" />
-        {/if}
-    </figure>
-    <div class="card-body">
-        <h2 class="card-title">{name}</h2>
-        <p>{description}</p>
+    <div class="flex items-start justify-between mb-4">
+        <div class="w-12 h-12 flex items-center justify-center border border-border-primary bg-background font-mono text-2xl">
+            {#if img}
+                <img src={img} alt={name} class="w-8 h-8 object-contain" />
+            {:else}
+                <span>{imgAsTxt}</span>
+            {/if}
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-border-primary opacity-0 group-hover:opacity-100 transition-opacity">
+            <path stroke-linecap="square" stroke-linejoin="miter" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+        </svg>
     </div>
+    
+    <h3 class="font-mono text-xl font-bold uppercase mb-2 text-text-primary group-hover:underline decoration-border-primary underline-offset-4">{name}</h3>
+    <p class="text-sm text-text-primary/80 leading-relaxed">{description}</p>
 </a>
-
-<style>
-    .project-card-link {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        box-sizing: border-box;
-        position: relative;
-        text-decoration: none;
-        color: inherit;
-        min-height: 9rem;
-    }
-
-    figure {
-        min-width: 8rem;
-        max-width: 8rem;
-        background-color: hsl(var(--s));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .card-body {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        gap: 0.5rem;
-    }
-
-    .card-title {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin: 0;
-    }
-
-    .card-body p {
-        margin: 0;
-        font-size: 0.875rem;
-    }
-</style>

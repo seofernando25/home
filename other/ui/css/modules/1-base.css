@@ -1,9 +1,3 @@
-@import "tailwindcss";
-
-@theme {
-  --font-mono: "Space Mono", monospace;
-}
-
 /* 1. Core Variables & Reset */
 :root {
     --bg-primary: #efede5;
@@ -13,6 +7,14 @@
     --text-muted: #595959;
     --border-color: #634936;
     --grid-line: rgba(99, 73, 54, 0.1);
+    --selection-bg: #1a1a1b;
+    --selection-text: #efede5;
+
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
 
     --font-primary: 'Inter', system-ui, sans-serif;
     --font-mono: 'Space Mono', monospace;
@@ -27,7 +29,11 @@ html.dark {
     --text-muted: #a3a393;
     --border-color: #634936;
     --grid-line: #2a2a2b;
+    --selection-bg: #efede5;
+    --selection-text: #1a1a1b;
 }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
     scroll-behavior: smooth;
@@ -50,15 +56,11 @@ body {
 a { color: inherit; text-decoration: none; transition: opacity 0.2s; }
 a:hover { opacity: 0.8; }
 
-h1, h2, h3, h4 { line-height: 1.2; }
+h1, h2, h3, h4 { line-height: 1.2; margin-bottom: var(--space-sm); }
 
 .bg-grid {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
+    inset: 0;
     background-size: 40px 40px;
     background-image: linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
                       linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
@@ -68,65 +70,10 @@ h1, h2, h3, h4 { line-height: 1.2; }
     pointer-events: none;
 }
 
-/* 2. Page Sections */
-
-/* Blog */
-.back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 3rem;
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.2s;
+.overlay {
+    position: absolute;
+    inset: 0;
+    transition: background-color 0.2s;
+    background-color: var(--text-primary);
+    opacity: 0.05;
 }
-
-.back-link:hover {
-    color: var(--text-primary);
-}
-.blog-post {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 8rem 1.5rem 6rem;
-}
-
-.blog-post header {
-    margin-bottom: 4rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 2rem;
-}
-
-.blog-post .meta {
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.blog-post h1 {
-    font-size: 3rem;
-    font-weight: 500;
-    letter-spacing: -0.05em;
-    line-height: 1.1;
-}
-
-.post-content {
-    font-size: 1.125rem;
-    line-height: 1.7;
-    color: var(--text-primary);
-}
-
-.post-content h2 {
-    font-size: 1.75rem;
-    font-weight: 500;
-    margin: 3rem 0 1.5rem;
-    border-left: 4px solid var(--border-color);
-    padding-left: 1.5rem;
-}
-
-.post-content p { margin-bottom: 1.5rem; }
-.post-content ul, .post-content ol { margin-bottom: 2rem; padding-left: 1.5rem; }
-.post-content li { margin-bottom: 1rem; }

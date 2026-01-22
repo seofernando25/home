@@ -1,46 +1,69 @@
 <script lang="ts">
-    import HomePage1 from "$lib/components/home/HomePage1.svelte";
+    import HeroProfile from "$lib/components/home/HeroProfile.svelte";
+    import Timeline from "$lib/components/ui/Timeline.svelte";
+    import TimelineItem from "$lib/components/ui/TimelineItem.svelte";
 
-    let { data } = $props();
-
-    // Lazy load components asynchronously after initial render
-    let HomePage2 = $state<typeof import("$lib/components/home/HomePage2.svelte").default>();
-    let History = $state<typeof import("$lib/components/home/History.svelte").default>();
-
-    // Load components asynchronously after initial render
-    $effect(() => {
-        // Load HomePage2
-        import("$lib/components/home/HomePage2.svelte").then(module => {
-            HomePage2 = module.default;
-        });
-
-        // Load History
-        import("$lib/components/home/History.svelte").then(module => {
-            History = module.default;
-        });
-    });
+    const timeline = [
+        {
+            year: "2025 - PRESENT",
+            title: "Master of Computer Science",
+            subtitle: "Concentration in Applied Artificial Intelligence",
+            org: "University of Ottawa",
+            description: "Expanding my knowledge in AI and its practical applications within computer science."
+        },
+        {
+            year: "2023 - 2023",
+            title: "Co-op Front-End Developer",
+            subtitle: "Trading Central",
+            org: "Trading Central",
+            description: "Worked on financial visualization tools and UIs using Angular. Introduced end-to-end testing methodologies and enhanced CI/CD pipelines."
+        },
+        {
+            year: "2023 - 2023",
+            title: "Co-op Full Stack Software Developer",
+            subtitle: "Engineering Outreach Department",
+            org: "University of Ottawa",
+            description: "Maintained and developed an in-house ERP system and user-facing applications for the University of Ottawa's outreach events."
+        },
+        {
+            year: "2021 - PRESENT",
+            title: "Avionics Developer",
+            subtitle: "uOttawa Rocketry",
+            org: "uOttawa Rocketry",
+            description: "Focused on SRAD geospatial software, telemetry systems, and tracking antennas."
+        },
+        {
+            year: "2021 - 2025",
+            title: "Honours Bachelor of Science",
+            subtitle: "Computer Science & Statistics",
+            org: "University of Ottawa",
+            description: "Completed my undergraduate degree in computer science along with a minor in statistics."
+        }
+    ];
 </script>
 
-<div class="fps-container bg text-neutral-content">
-    <HomePage1 />
-    {#if HomePage2}
-        <HomePage2 />
-    {/if}
-    {#if History}
-        <History />
-    {/if}
+<div class="page-container">
+    <HeroProfile />
+
+    <div class="timeline-wrapper">
+        <Timeline title="History">
+            {#each timeline as item, i}
+                <TimelineItem 
+                    title={item.title}
+                    org={item.org}
+                    year={item.year}
+                    subtitle={item.subtitle}
+                    description={item.description}
+                    isLast={i === timeline.length - 1}
+                />
+            {/each}
+        </Timeline>
+    </div>
 </div>
 
 <style>
-    /* Full page scroll */
-    .fps-container {
-        scroll-snap-type: y mandatory;
-        overflow-y: scroll;
-        height: 100dvh;
+    .page-container {
+        padding-top: 8rem;
     }
-
-    .bg {
-        background-color: #000000;
-        background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%2328303b' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
-    }
+    
 </style>
