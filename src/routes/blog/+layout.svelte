@@ -1,9 +1,19 @@
 <script lang="ts">
     import { page } from '$app/stores';
     import type { PageData } from './$types';
+
+    type BlogPageData = PageData & {
+        title?: string;
+        date?: string;
+        excerpt?: string;
+        ogImage?: string;
+        ogUrl?: string;
+        siteName?: string;
+    };
     
-    $: data = $page.data as PageData;
-    $: ogTitle = data?.title || 'Fernando Nogueira';
+    $: data = $page.data as BlogPageData;
+    $: ogTitle = data?.title || 'Blog';
+    $: pageTitle = data?.title ? `${data.title} | Fernando Nogueira` : 'Blog | Fernando Nogueira';
     $: ogDescription = data?.excerpt || '';
     $: ogImage = data?.ogImage || 'https://www.seofernando.com/favicon.webp';
     $: ogUrl = data?.ogUrl || 'https://www.seofernando.com';
@@ -13,7 +23,7 @@
 </script>
 
 <svelte:head>
-    <title>{ogTitle} | Fernando Nogueira</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={ogDescription} />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:type" content="article" />
