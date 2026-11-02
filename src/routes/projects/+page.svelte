@@ -32,7 +32,7 @@
         },
         {
             name: "planNAV",
-            description: "Flight-schedule collision detector and solver, 2nd place at uOttaHack 2026",
+            description: "Flight-schedule conflict solver, 2nd place in NAV CANADA challenge, uOttaHack 2026",
             link: "https://github.com/seofernando25/planNAV",
             imgAsTxt: "✈️",
             type: "HACKATHON"

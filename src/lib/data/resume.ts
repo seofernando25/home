@@ -188,6 +188,12 @@ export const awards = [
         link: "https://lnkd.in/p/gB_9JYiX"
     },
     {
+        title: "2nd Place, NAV CANADA Trajectory Insight Challenge",
+        event: "uOttaHack 8, 2026",
+        detail: "planNAV, flight-schedule conflict insights for national flight planning",
+        link: "https://github.com/seofernando25/planNAV"
+    },
+    {
         title: "1st Place and Grand Launch Trophy, Launch Canada",
         event: "uOttawa Rocketry, 2026",
         detail: "Perigee-Gee, Mach 2.3, 34,801 ft",
