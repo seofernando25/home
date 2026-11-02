@@ -3,18 +3,74 @@
 
     const projects = [
         {
+            name: "garmin-proto-lab",
+            description: "Clean-room Garmin watch protocol research and Python reference implementation",
+            link: "https://github.com/seofernando25/garmin-proto-lab",
+            imgAsTxt: "⌚",
+            type: "RESEARCH"
+        },
+        {
+            name: "VLA-JEPA",
+            description: "Efficient vision-language-action robot policies with LeRobot on LIBERO (CSI 5341)",
+            link: "https://github.com/seofernando25/csi5341-vla-jepa",
+            imgAsTxt: "🤖",
+            type: "ROBOTICS"
+        },
+        {
+            name: "roomlab",
+            description: "Multiplayer isometric room builder and social game (Bun, Elysia, Three.js)",
+            link: "https://github.com/seofernando25/roomlab",
+            imgAsTxt: "🎮",
+            type: "GAME"
+        },
+        {
+            name: "parlez-vous",
+            description: "Offline privacy-focused AI language learning",
+            link: "https://github.com/seofernando25/parlez-vous",
+            imgAsTxt: "🔒",
+            type: "AI APP"
+        },
+        {
+            name: "planNAV",
+            description: "Flight-schedule collision detector and solver, 2nd place at uOttaHack 2026",
+            link: "https://github.com/seofernando25/planNAV",
+            imgAsTxt: "✈️",
+            type: "HACKATHON"
+        },
+        {
+            name: "texlyre",
+            description: "Local-first LaTeX and Typst editor with realtime collaboration and offline support",
+            link: "https://github.com/seofernando25/texlyre",
+            imgAsTxt: "📝",
+            type: "WEB APP"
+        },
+        {
+            name: "sergw",
+            description: "Serial-to-TCP gateway with TUI and mDNS discovery (on crates.io)",
+            link: "https://github.com/seofernando25/sergw",
+            imgAsTxt: "🔌",
+            type: "TOOL"
+        },
+        {
+            name: "ms5611-01ba",
+            description: "Embedded Rust driver for the MS5611 barometric pressure sensor",
+            link: "https://github.com/seofernando25/ms5611-01ba",
+            imgAsTxt: "🌡️",
+            type: "EMBEDDED"
+        },
+        {
+            name: "RGS",
+            description: "uORocketry's next generation ground station",
+            link: "https://uorocketry.ca/rgs/",
+            img: "https://uorocketry.ca/images/icon.png",
+            type: "AEROSPACE"
+        },
+        {
             name: "PokeIndex",
             description: "A simple Pokemon search tool",
             link: "https://pokeindex.seofernando.com/",
             img: "https://pokeindex.seofernando.com/assets/img/favicon.svg",
             type: "WEB APP"
-        },
-        {
-            name: "BrikPick",
-            description: "An extension that automates the process of bulk buying LEGO sets",
-            link: "https://chrome.google.com/webstore/detail/brikpick/oinlneaddfceblampipdlbogeogjnbji",
-            img: "https://github.com/SeoFernando25/bp-web/blob/master/static/favicon.png?raw=true",
-            type: "EXTENSION"
         },
         {
             name: "OS Calculators",
@@ -24,25 +80,11 @@
             type: "EDUCATIONAL"
         },
         {
-            name: "ULauncher GPT",
-            description: "An ULauncher extension that allows you to use GPT-3 inside ULauncher",
-            link: "https://ext.ulauncher.io/-/github-seofernando25-ulauncher-gpt",
-            img: "https://github.com/SeoFernando25/ulauncher-gpt/blob/master/images/icon.png?raw=true",
-            type: "TOOL"
-        },
-        {
             name: "SAM TTS",
             description: "An online Text to Speech tool",
             link: "https://sam.seofernando.com/",
             imgAsTxt: "🗣️",
             type: "TOOL"
-        },
-        {
-            name: "RGS",
-            description: "uORocketry's next generation ground station",
-            link: "https://uorocketry.ca/rgs/",
-            img: "https://uorocketry.ca/images/icon.png",
-            type: "AEROSPACE"
         },
         {
             name: "Iterative Systems",
