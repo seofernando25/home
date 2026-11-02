@@ -3,7 +3,7 @@
 
     const name = "Fernando Nogueira";
     const tagline = "Software Engineer & Aspiring Wizard";
-    const avatarSrc = "/favicon.webp";
+    const avatarSrc = "/pfp.jpeg";
 </script>
 
 <section class="hero-profile">

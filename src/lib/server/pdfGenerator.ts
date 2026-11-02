@@ -315,7 +315,7 @@ export async function generateResumePdf(): Promise<Uint8Array> {
 
     for (const exp of experiences) {
         // Job title line
-        const roleLine = `${exp.role}, ${exp.type} (${exp.period})`;
+        const roleLine = exp.type !== exp.role ? `${exp.role}, ${exp.type} (${exp.period})` : `${exp.role} (${exp.period})`;
         page.drawText(roleLine, {
             x: marginX + 10,
             y: expY,

@@ -103,7 +103,9 @@
                                     <div class="exp-main-info">
                                         <div class="exp-title-row">
                                             <h4 class="exp-role">{exp.role}</h4>
-                                            <span class="exp-tag">{exp.type}</span>
+                                            {#if exp.type !== exp.role}
+                                                <span class="exp-tag">{exp.type}</span>
+                                            {/if}
                                         </div>
                                         <div class="exp-company-info">
                                             {#if exp.team}
@@ -309,7 +311,7 @@
                 {#each experiences as exp}
                     <div class="p-exp-entry">
                         <div class="p-exp-entry-header">
-                            <span class="p-entry-role"><strong>{exp.role}</strong>, {exp.type} ({exp.period})</span>
+                            <span class="p-entry-role"><strong>{exp.role}</strong>{exp.type !== exp.role ? `, ${exp.type}` : ''} ({exp.period})</span>
                         </div>
                         {#if exp.team}
                             <div class="p-entry-company">{exp.team}, {exp.company}</div>
