@@ -38,13 +38,6 @@
             type: "HACKATHON"
         },
         {
-            name: "texlyre",
-            description: "Local-first LaTeX and Typst editor with realtime collaboration and offline support",
-            link: "https://github.com/seofernando25/texlyre",
-            imgAsTxt: "📝",
-            type: "WEB APP"
-        },
-        {
             name: "sergw",
             description: "Serial-to-TCP gateway with TUI and mDNS discovery (on crates.io)",
             link: "https://github.com/seofernando25/sergw",
