@@ -17,6 +17,13 @@
             type: "MAC APP"
         },
         {
+            name: "Fireline",
+            description: "Quantum wildfire-estimation game, 1st place at IBM Qiskit Fall Fest 2026",
+            link: "https://fireline.ohrats.party/",
+            imgAsTxt: "🔥",
+            type: "GAME"
+        },
+        {
             name: "sergw",
             description: "Serial-to-TCP gateway with TUI and mDNS discovery (on crates.io)",
             link: "https://github.com/seofernando25/sergw",
