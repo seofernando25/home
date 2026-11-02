@@ -3,20 +3,6 @@
 
     const projects = [
         {
-            name: "VLA-JEPA",
-            description: "Efficient vision-language-action robot policies with LeRobot on LIBERO (CSI 5341)",
-            link: "https://github.com/seofernando25/csi5341-vla-jepa",
-            imgAsTxt: "🤖",
-            type: "ROBOTICS"
-        },
-        {
-            name: "roomlab",
-            description: "Multiplayer isometric room builder and social game (Bun, Elysia, Three.js)",
-            link: "https://github.com/seofernando25/roomlab",
-            imgAsTxt: "🎮",
-            type: "GAME"
-        },
-        {
             name: "parlez-vous",
             description: "Offline privacy-focused AI language learning",
             link: "https://github.com/seofernando25/parlez-vous",
