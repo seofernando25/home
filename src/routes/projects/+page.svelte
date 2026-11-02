@@ -1,13 +1,13 @@
 <script lang="ts">
     import Card from "$lib/components/ui/Card.svelte";
 
-    const projects = [
+    const featured = [
         {
-            name: "parlez-vous",
-            description: "Offline privacy-focused AI language learning",
-            link: "https://github.com/seofernando25/parlez-vous",
-            imgAsTxt: "🔒",
-            type: "AI APP"
+            name: "sergw",
+            description: "Serial-to-TCP gateway with TUI and mDNS discovery (on crates.io)",
+            link: "https://github.com/seofernando25/sergw",
+            imgAsTxt: "🔌",
+            type: "TOOL"
         },
         {
             name: "planNAV",
@@ -17,11 +17,18 @@
             type: "HACKATHON"
         },
         {
-            name: "sergw",
-            description: "Serial-to-TCP gateway with TUI and mDNS discovery (on crates.io)",
-            link: "https://github.com/seofernando25/sergw",
-            imgAsTxt: "🔌",
-            type: "TOOL"
+            name: "RGS",
+            description: "uORocketry's next generation ground station",
+            link: "https://uorocketry.ca/rgs/",
+            img: "https://uorocketry.ca/images/icon.png",
+            type: "AEROSPACE"
+        },
+        {
+            name: "parlez-vous",
+            description: "Offline privacy-focused AI language learning",
+            link: "https://github.com/seofernando25/parlez-vous",
+            imgAsTxt: "🔒",
+            type: "AI APP"
         },
         {
             name: "ms5611-01ba",
@@ -29,14 +36,10 @@
             link: "https://github.com/seofernando25/ms5611-01ba",
             imgAsTxt: "🌡️",
             type: "EMBEDDED"
-        },
-        {
-            name: "RGS",
-            description: "uORocketry's next generation ground station",
-            link: "https://uorocketry.ca/rgs/",
-            img: "https://uorocketry.ca/images/icon.png",
-            type: "AEROSPACE"
-        },
+        }
+    ];
+
+    const experiments = [
         {
             name: "PokeIndex",
             description: "A simple Pokemon search tool",
@@ -70,7 +73,23 @@
     </header>
 
     <div class="grid-layout">
-        {#each projects as project}
+        {#each featured as project}
+            <Card 
+                href={project.link}
+                title={project.name}
+                description={project.description}
+                imageSrc={project.img}
+                imageFallback={project.imgAsTxt}
+                badge={project.type}
+                target="_blank"
+            />
+        {/each}
+    </div>
+
+    <h2 class="subheading">More experiments</h2>
+
+    <div class="grid-layout">
+        {#each experiments as project}
             <Card 
                 href={project.link}
                 title={project.name}
@@ -111,6 +130,15 @@
         font-size: 1rem;
         color: var(--text-muted);
         line-height: 1.6;
+    }
+
+    .subheading {
+        font-family: var(--font-primary);
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: var(--text-primary);
+        margin: 3rem 0 1.5rem;
     }
 
     .grid-layout {
