@@ -326,7 +326,7 @@ export async function generateResumePdf(): Promise<Uint8Array> {
         expY -= 11;
 
         // Company line
-        const compLine = `${exp.team}, ${exp.company}`;
+        const compLine = exp.team ? `${exp.team}, ${exp.company}` : exp.company;
         page.drawText(compLine, {
             x: marginX + 10,
             y: expY,

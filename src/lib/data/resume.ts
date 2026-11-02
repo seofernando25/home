@@ -107,14 +107,13 @@ export const experiences: ExperienceItem[] = [
         role: "Founder",
         type: "Founder",
         company: "OhRats Technologies",
-        team: "ohRats.party",
+        team: "",
         period: "March 2026 – Present",
         highlights: [
             "Founded a small software company building open-source tools for people who build things",
             "Shipped WakeBar, a native macOS menu-bar app for idle sleep and lid-close control, distributed via Homebrew",
             "Building RC, an MCP service giving AI assistants scoped, passkey-approved access to user machines"
-        ],
-        metrics: ["WakeBar", "RC", "MCP"]
+        ]
     },
     {
         role: "Autonomy Developer",

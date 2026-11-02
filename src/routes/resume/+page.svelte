@@ -106,7 +106,11 @@
                                             <span class="exp-tag">{exp.type}</span>
                                         </div>
                                         <div class="exp-company-info">
-                                            <span>{exp.team}, {exp.company}</span>
+                                            {#if exp.team}
+                                                <span>{exp.team}, {exp.company}</span>
+                                            {:else}
+                                                <span>{exp.company}</span>
+                                            {/if}
                                         </div>
                                     </div>
                                     <div class="exp-meta">
@@ -307,7 +311,11 @@
                         <div class="p-exp-entry-header">
                             <span class="p-entry-role"><strong>{exp.role}</strong>, {exp.type} ({exp.period})</span>
                         </div>
-                        <div class="p-entry-company">{exp.team}, {exp.company}</div>
+                        {#if exp.team}
+                            <div class="p-entry-company">{exp.team}, {exp.company}</div>
+                        {:else}
+                            <div class="p-entry-company">{exp.company}</div>
+                        {/if}
                         <ul class="p-entry-bullets">
                             {#each exp.highlights as bullet}
                                 <li>{bullet}</li>
