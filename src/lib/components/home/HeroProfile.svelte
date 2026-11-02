@@ -36,7 +36,7 @@
         
         <div class="description">
             <p>I'm a Master's Student at the Faculty of Engineering in the University of Ottawa, Canada.</p>
-            <p>My main interests are focused on Telemetry intelligence, Machine Learning and System Architecture.</p>
+            <p>My main interests are focused on real-time telemetry and monitoring, applied machine learning, and system architecture.</p>
             <p>I like to build tools, break things, and occasionally fix them.</p>
             <p>I use Arch btw.</p>
         </div>

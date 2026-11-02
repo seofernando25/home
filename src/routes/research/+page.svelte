@@ -3,6 +3,7 @@
 
     const researchEntries = [
         {
+            id: "double-descent-cifar10",
             title: "From Handcrafted Features to Double Descent on CIFAR-10",
             year: "2025",
             description: "Investigates the double descent phenomenon in deep learning, comparing classical SVM with Fisher Vectors to a size varying CNN on CIFAR-10.",
@@ -11,6 +12,7 @@
             paper: "https://cdn.githubraw.com/seofernando25/CSI5155/main/project/report/main.pdf",
         },
         {
+            id: "hyperparameter-optimizers",
             title: "Testing the Effectiveness, Convergence, and Stability of Search-Based Hyperparameter Optimizers",
             year: "2025",
             description: "Empirical study comparing Random Search against GA and PSO for hyperparameter tuning of DTs, KNNs, and a small CNN on grayscale CIFAR-10.",
@@ -33,6 +35,7 @@
     <div class="research-list">
         {#each researchEntries as entry}
             <ResearchCard 
+                id={entry.id}
                 title={entry.title}
                 year={entry.year}
                 description={entry.description}

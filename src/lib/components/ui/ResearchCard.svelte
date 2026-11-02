@@ -1,6 +1,7 @@
 <script lang="ts">
     interface Props {
         title: string;
+        id?: string;
         year: string;
         description: string;
         conclusion?: string;
@@ -10,10 +11,10 @@
         reportTitle?: string;
     }
 
-    let { title, year, description, conclusion, note, repo, paper, reportTitle }: Props = $props();
+    let { title, id, year, description, conclusion, note, repo, paper, reportTitle }: Props = $props();
 </script>
 
-<div class="research-card">
+<section {id} class="research-card">
     <div class="research-header">
         <div class="research-meta">
             <span class="research-year">{year}</span>
@@ -59,7 +60,7 @@
             </div>
         {/if}
     </div>
-</div>
+</section>
 
 <style>
     .research-card {
@@ -67,6 +68,7 @@
         border: 1px solid var(--border-color);
         padding: 2rem;
         transition: all 0.2s ease;
+        scroll-margin-top: 5rem;
     }
 
     .research-card:hover {
