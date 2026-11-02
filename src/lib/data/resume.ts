@@ -67,6 +67,7 @@ export const skills: SkillSet = {
     proficiency: [
         "Python",
         "TypeScript/JavaScript",
+        "Swift",
         "PostgreSQL",
         "Docker",
         "AWS",
