@@ -57,13 +57,6 @@
             link: "https://sam.seofernando.com/",
             imgAsTxt: "🗣️",
             type: "TOOL"
-        },
-        {
-            name: "Iterative Systems",
-            description: "Simple Epidemic Model Fiddle",
-            link: "https://iterative-systems.seofernando.com/",
-            imgAsTxt: "🔄",
-            type: "SIMULATION"
         }
     ];
 </script>
