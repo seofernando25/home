@@ -3,6 +3,20 @@
 
     const featured = [
         {
+            name: "RC",
+            description: "Give AI assistants scoped access to your machines over MCP (OhRats)",
+            link: "https://rc.ohrats.party/",
+            imgAsTxt: "🖥️",
+            type: "PLATFORM"
+        },
+        {
+            name: "WakeBar",
+            description: "Tiny native macOS menu-bar controls for idle sleep and lid-close behavior (OhRats)",
+            link: "https://wakebar.ohrats.party/",
+            imgAsTxt: "☕",
+            type: "MAC APP"
+        },
+        {
             name: "sergw",
             description: "Serial-to-TCP gateway with TUI and mDNS discovery (on crates.io)",
             link: "https://github.com/seofernando25/sergw",
