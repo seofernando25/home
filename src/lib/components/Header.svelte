@@ -76,7 +76,7 @@
                 </svg>
             </a>
 
-            <a href="mailto:abert036@uottawa.ca" class="cta-button">
+            <a href="mailto:toniberti.jr@gmail.com" class="cta-button">
                 Contact
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -115,7 +115,7 @@
 
         <a href="https://github.com/SeoFernando25" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://x.com/seofernando" class="mobile-menu-link" target="_blank" rel="noopener noreferrer">X / Twitter</a>
-        <a href="mailto:abert036@uottawa.ca" class="mobile-menu-link">Contact</a>
+        <a href="mailto:toniberti.jr@gmail.com" class="mobile-menu-link">Contact</a>
     </div>
 </nav>
 

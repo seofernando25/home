@@ -42,7 +42,7 @@ export const contactInfo: ContactInfo = {
     title: "Software Developer, MSc Computer Science (Applied AI)",
     location: "Ottawa, ON",
     phone: "(609) 401-9906",
-    email: "abert036@uottawa.ca",
+    email: "toniberti.jr@gmail.com",
     website: "https://www.seofernando.com",
     websiteDisplay: "www.seofernando.com",
     github: "https://github.com/SeoFernando25",
