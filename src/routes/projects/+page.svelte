@@ -3,13 +3,6 @@
 
     const projects = [
         {
-            name: "garmin-proto-lab",
-            description: "Clean-room Garmin watch protocol research and Python reference implementation",
-            link: "https://github.com/seofernando25/garmin-proto-lab",
-            imgAsTxt: "⌚",
-            type: "RESEARCH"
-        },
-        {
             name: "VLA-JEPA",
             description: "Efficient vision-language-action robot policies with LeRobot on LIBERO (CSI 5341)",
             link: "https://github.com/seofernando25/csi5341-vla-jepa",
