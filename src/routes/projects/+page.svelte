@@ -3,13 +3,6 @@
 
     const projects = [
         {
-            name: "StealthShare",
-            description: "Free temporary file hosting website using R2 Buckets",
-            link: "https://bucket.seofernando.com",
-            imgAsTxt: "🔗",
-            type: "WEB APP"
-        },
-        {
             name: "PokeIndex",
             description: "A simple Pokemon search tool",
             link: "https://pokeindex.seofernando.com/",
