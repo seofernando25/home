@@ -12,7 +12,7 @@
         {
             name: "planNAV",
             description: "Flight-schedule conflict solver, 2nd place in NAV CANADA challenge, uOttaHack 2026",
-            link: "https://github.com/seofernando25/planNAV",
+            link: "https://plannav.ohrats.party/",
             imgAsTxt: "✈️",
             type: "HACKATHON"
         },
