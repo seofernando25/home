@@ -26,6 +26,8 @@
                 <a href="/" class="footer-link">Home</a>
                 <a href="/projects" class="footer-link">Projects</a>
                 <a href="/blog" class="footer-link">Blog</a>
+                <a href="/research" class="footer-link">Research</a>
+                <a href="/resume" class="footer-link">Resume</a>
             </div>
             
             <div class="footer-column">

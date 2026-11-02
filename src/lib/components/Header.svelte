@@ -54,6 +54,10 @@
                     <span class="menu-number">04</span>
                     <span class="menu-label">Research</span>
                 </a>
+                <a href="/resume" class="menu-item">
+                    <span class="menu-number">05</span>
+                    <span class="menu-label">Resume</span>
+                </a>
             </div>
         </div>
 
@@ -94,6 +98,7 @@
         <a href="/projects" class="mobile-menu-link" onclick={toggleMenu}>02 Projects</a>
         <a href="/blog" class="mobile-menu-link" onclick={toggleMenu}>03 Blog</a>
         <a href="/research" class="mobile-menu-link" onclick={toggleMenu}>04 Research</a>
+        <a href="/resume" class="mobile-menu-link" onclick={toggleMenu}>05 Resume</a>
         
         <div class="mobile-divider"></div>
         
